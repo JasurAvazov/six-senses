@@ -1,0 +1,51 @@
+.book-container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    .text{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        p{
+            font-weight: 400;
+            font-size: 48px;
+            max-width: 550px;
+            color: white;
+            line-height: 56px;
+            text-transform: uppercase;
+            text-align: center;
+            font-family: 'Tenor Sans', sans-serif;
+            span{
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+.bg-tower{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .toning{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}

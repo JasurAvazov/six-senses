@@ -1,0 +1,82 @@
+.about-developer__container{
+    max-width: 1200px;
+    padding: 80px 20px;
+    margin: auto;
+    cursor: default;
+}
+
+.ad-top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ad-title{
+    text-transform: uppercase;
+    color: #459A77;
+    font-size: 64px;
+    font-family: 'Tenor Sans', sans-serif;
+    max-width: 400px;
+}
+
+.ad-text{
+    margin-top: 24px;
+    max-width: 750px;
+    color: #777777;
+    font-size: 21px;
+    line-height: 26px;
+}
+
+.project-gallery{
+    margin-top: 48px;
+}
+
+.projects-top{
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.projects-title{
+    max-width: 420px;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Tenor Sans', sans-serif;
+    line-height: 37px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.projects-top a{
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+}
+
+.gallery-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-box{
+    width: calc(33.3% - 16px);
+    aspect-ratio: .8;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.project-box:hover img{
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+.project-box img{
+    width: 100%;
+    aspect-ratio: .8;
+    object-fit: cover;
+    transition: .2s;
+    will-change: transform;
+}

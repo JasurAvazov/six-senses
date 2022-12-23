@@ -1,0 +1,234 @@
+.floor {
+    padding: 80px 10px;
+    background-color: white;
+    cursor: default;
+}
+
+.floor__body{
+    max-width: 1200px;
+    padding: 0 10px;
+    margin: auto;
+}
+
+.floor__title {
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 63px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.floor__content {
+    display: none;
+    position: relative;
+}
+
+.floor__content > * {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 300ms ease-out, visibility 300ms ease-out;
+}
+
+.floor__content.active {
+    display: block;
+}
+
+.floor__content.active > * {
+    opacity: 1;
+    visibility: visible;
+}
+
+.floor__navigation {
+    position: absolute;
+    width: 620px;
+    height: 0;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.floor__navigation .swiper-button-prev {
+    pointer-events: all;
+}
+
+.floor__navigation .swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.floor__navigation .swiper-button-next {
+    pointer-events: all;
+}
+
+.floor__navigation .swiper-button-next.swiper-button-disabled {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.floor .swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.floor .swiper-slide {
+    user-select: none;
+    pointer-events: none;
+}
+
+.floor .swiper-slide > * {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 600ms ease, visibility 600ms ease;
+}
+
+.floor .swiper-slide-active {
+    pointer-events: all;
+    z-index: 2;
+}
+
+.floor .swiper-slide-active > * {
+    opacity: 1;
+    visibility: visible;
+}
+
+.floor .swiper-wrapper {
+    display: flex;
+}
+
+.floor__tab {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 64px;
+}
+
+.floor__tab-item {
+    padding: 8px 22px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    border: 1px solid black;
+    text-align: center;
+    color: black;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.floor__tab-item.active {
+    background: #459A77;
+    color: #fff;
+    border-color: #459A77;
+}
+
+.floor__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 120px;
+}
+
+.floor__item-title {
+    font-weight: 500;
+    font-size: 46px;
+    line-height: 95.2%;
+    margin-bottom: 55px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.floor__item-img {
+    position: relative;
+    max-width: 500px;
+    margin: 0 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floor__item-img img {
+    max-width: 100%;
+}
+
+.floor__item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 50px;
+    min-width: 330px;
+}
+
+.floor__item-info-p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.floor__item-info-p span {
+    font-weight: 700;
+}
+
+.floor__item-info-btn {
+    margin-bottom: 25px;
+}
+
+.floor__item-info-label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.floor__navigation .swiper-button-next:after,.floor__navigation .swiper-button-prev:after{
+    display: none;
+}
+
+.floor__next,.floor__prev{
+    width: 50px !important;
+    height: 50px !important;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floor__navigation .swiper-button-next, .floor__navigation .swiper-button-prev{
+    position: relative;
+    left: auto;
+}
+
+.floor__swiper{
+    height: auto;
+}
+
+.floor__item-btn{
+    padding: 10px 30px;
+    background-color: #459A77;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    align-items: center;
+}
+
+.floor__item-btn path{
+    stroke: white;
+}
