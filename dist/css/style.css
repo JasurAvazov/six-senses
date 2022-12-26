@@ -301,12 +301,25 @@
 .menu {
   background-color: black;
   width: 100%;
-  height: 100%;
+  height: 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  display: none;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+.menuOpened {
+  height: 100%;
+  border-radius: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .menu__container {
@@ -1026,7 +1039,7 @@
 .about-project {
   width: 100%;
   height: 528px;
-  overflow-y: inherit;
+  overflow: inherit;
   background: -o-linear-gradient(20deg, white 64%, #459A77 36%);
   background: linear-gradient(70deg, white 64%, #459A77 36%);
 }
@@ -1081,6 +1094,12 @@
   font-size: 13px;
   line-height: 13px;
   color: #2D374D;
+}
+.checked-text span {
+  margin-left: 8px;
+}
+.checked-text span:first-child {
+  margin-left: 0;
 }
 
 .checked-text img {
@@ -1280,14 +1299,14 @@
 
 .big-title {
   width: 100%;
-  padding: 80px 0;
   background-color: white;
   cursor: default;
+  overflow-x: hidden;
 }
 
 .big-title-con {
   max-width: 1200px;
-  padding: 0 20px;
+  padding: 80px 20px;
   width: 100%;
   margin: auto;
 }
@@ -2105,6 +2124,14 @@
 }
 .partners img {
   width: 206px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.partners img:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .footer {

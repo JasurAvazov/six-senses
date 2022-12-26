@@ -54,26 +54,26 @@ gsap.utils.toArray(".places-bottom").forEach(section => {
         }, 'start')
 })
 
-// gsap.utils.toArray(".book-img").forEach(section => {
-//     const tl = gsap.timeline({
-//             scrollTrigger: {
-//                 trigger: section,
-//                 start: "top 60%",
-//                 end: "top 20%",
-//                 scrub: 2,
-//                 markers: false,
-//             },
-//         });
-//     tl
-//         .add('start')
-//         .fromTo(section, {
-//             y: 60,
-//             ease: "expo.ease",
-//         },{
-//             y: 20,
-//             scale: 1.1,
-//         }, 'start')
-// })
+gsap.utils.toArray(".book-img").forEach(section => {
+    const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 60%",
+                end: "top 20%",
+                scrub: 2,
+                markers: false,
+            },
+        });
+    tl
+        .add('start')
+        .fromTo(section, {
+            x: 150,
+            ease: "expo.ease",
+        },{
+            x: 0,
+            scale: 1.2,
+        }, 'start')
+})
 
 gsap.utils.toArray(".formInput").forEach(section => {
     const tl = gsap.timeline({
@@ -231,27 +231,32 @@ let scrollBefore = 0;
 const header = document.getElementById('header');
 window.addEventListener('scroll', (e) => {
     const scrolled = window.scrollY;
-    if(scrollBefore > scrolled){
-        if(header.classList.contains('hide')){
-            header.classList.remove('hide')
-        }
-        scrollBefore = scrolled;
-    }else{
-        scrollBefore = scrolled;
-        if(!header.classList.contains('hide')){
-            header.classList.add('hide')
+    if (scrolled > 300){
+        if(scrollBefore > scrolled){
+            if(header.classList.contains('hide')){
+                header.classList.remove('hide')
+            }
+            scrollBefore = scrolled;
+        }else{
+            scrollBefore = scrolled;
+            if(!header.classList.contains('hide')){
+                header.classList.add('hide')
+            }
         }
     }
 })
+
+let menuOpened = false
 
 const menu_btn = document.querySelector('.menu-nav__menu')
 const menu_btn_back = document.getElementById('menu-back')
 const menu = document.getElementById('menu')
 menu_btn.addEventListener('click',() => {
-    menu.style.display = 'block'
+    menu.classList.add('menuOpened')
+    menuOpened = true
 })
 menu_btn_back.addEventListener('click', () => {
-    menu.style.display = 'none'
+    menu.classList.remove('menuOpened')
 })
 
 const numberClass = document.querySelectorAll('.show-number')
@@ -295,3 +300,17 @@ const obj = document.getElementById('obj')
 //         });
 //     });
 // });
+
+
+ScrollTrigger.addEventListener("scrollEnd", () => {
+    let top = window.scrollY
+    if (top > 300){
+        setTimeout(() => {
+            header.classList.add('hide')
+        }, 2000)
+    }
+    if (menuOpened){
+        console.log(menuOpened)
+        header.classList.remove('hide')
+    }
+});
