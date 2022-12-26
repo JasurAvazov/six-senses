@@ -28,6 +28,7 @@
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
+    caret-color: transparent;
 }
 
 *::selection{
@@ -41,11 +42,8 @@
     --swiper-btn-width: 100px;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 body{
+    overflow-x: hidden;
     background-color: black;
     cursor: default;
 }
@@ -66,4 +64,28 @@ body{
 
 ::-webkit-scrollbar-thumb:hover {
     background: #347258;
+}
+
+@media (max-width: 576px) {
+    .container{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container{
+        width: 576px;
+    }
+}
+
+@media (max-width: 992px){
+    .container{
+        width: 768px;
+    }
+}
+
+@media (max-width: 1200px){
+    .container{
+        width: 990px;
+    }
 }

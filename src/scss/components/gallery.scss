@@ -23,8 +23,15 @@
         width: auto;
         display: flex;
         align-items: center;
-        img{
-            height: 600px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        .slide-box{
+            height: 100%;
+            overflow: hidden;
+            img{
+                height: 100%;
+                max-height: 1080px;
+            }
         }
     }
     .swiper-slide{
