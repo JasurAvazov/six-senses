@@ -539,12 +539,12 @@
         padding: 60px 120px;
         .swiper-scrollbar-drag{
             background-color: #459A77 !important;
-            border-radius: 0 !important;
         }
         .swiper-scrollbar{
-            width: 100% !important;
-            left: 0 !important;
-            bottom: 0 !important;
+            width: 70% !important;
+            left: 50% !important;
+            transform: translateX(-50%);
+            bottom: 30px !important;
             background-color: #D9D9D9 !important;
         }
     }
@@ -562,6 +562,13 @@
         transform: scale(.9) !important;
         transition: .2s;
     }
+}
+
+.map-title{
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 40px 20px;
 }
 
 .map{

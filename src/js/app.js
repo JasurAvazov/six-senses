@@ -184,7 +184,7 @@ const autoSwiper = new Swiper(".twrSwiper", {
     scrollbar: {
         el: ".swiper-scrollbar",
     },
-    spaceBetween: 20,
+    spaceBetween: 0,
     simulateTouch: true,
     autoplay: {
         delay: 2000,
