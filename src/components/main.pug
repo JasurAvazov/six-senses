@@ -187,11 +187,12 @@ mixin main()
                     img(src='@img/broshure_book.png' alt='' draggable='false').book-img
     .towers
         .twr-con
-
-        .twr-title
-            picture
-                source(srcset='@img/logo.svg' type='image/svg')
-                img(src='@img/logo.svg' alt='' draggable='false')
+            .twr-title
+                .twr-title__con
+                    picture
+                        source(srcset='@img/mask.svg' type='image/svg')
+                        img(src='@img/mask.svg' alt='' draggable='false')
+                    h3 <span>Luxyry</span> style
     .map
         #map1.bg-map.active
             img(src='@img/map-all.png' alt='')

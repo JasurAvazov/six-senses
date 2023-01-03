@@ -1546,10 +1546,33 @@
 
 .twr-con {
   width: 100%;
+  height: 250vh;
   position: relative;
 }
 
 .twr-title {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: red;
+  height: 100vh;
+}
+
+.twr-title__con {
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1560,6 +1583,20 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 40px;
+}
+.twr-title__con img {
+  max-width: 1160px;
+  width: 900px;
+}
+.twr-title__con h3 {
+  text-align: center;
+  font-size: 64px;
+  font-weight: 400;
+  font-family: "Tenor Sans", sans-serif;
+}
+.twr-title__con h3 span {
+  color: #459A77;
 }
 
 .map {
