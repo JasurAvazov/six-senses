@@ -4,13 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20221226163459">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230101155208">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20221226163459">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20230101155208">
   </head>
-  <body> 
+  <body id="body">
     <div class="wrapper">
+            <div class="preloader" id="preloader">
+              <div class="preloader-con">
+                <div class="overlay" id="percent">0%</div>
+              </div>
+            </div>
             <div class="menu" id="menu">
+              <div class="menu-mobile">
+                <video class="menu__banner" muted="" loop="" autoplay="">
+                  <source src="./files/banner-video.mp4" type="video/mp4">
+                </video>
+                <div class="menu-mobile__content">
+                  <div class="top">
+                    <div class="menu-back menu-close"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.1004 10.0919L1.21706 0.207031L0.5 0.924199L10.3834 10.8091L0.704341 20.4896L1.4214 21.2067L11.1004 11.5262L20.5777 21.0049L21.2947 20.2877L11.8175 10.8091L21.4991 1.12604L20.782 0.40887L11.1004 10.0919Z" fill="black"/>
+</svg>
+                    </div>
+                    <div class="menu-nav__broshure broshure-open">Broshure</div>
+                  </div>
+                  <div class="mobile-nav"><a class="menu-con__btn active" href="#">
+                      <p>Menu</p></a><a class="menu-con__btn" href="#">
+                      <p>About</p></a><a class="menu-con__btn" href="#">
+                      <p>Location</p></a><a class="menu-con__btn" href="#">
+                      <p>Amenities</p></a><a class="menu-con__btn" href="#">
+                      <p>Gallery</p></a><a class="menu-con__btn" href="#">
+                      <p>Floor plans</p></a></div>
+                </div>
+              </div>
               <div class="menu__container">
                 <div class="menu__leftSide">
                   <video class="menu__banner" muted="" loop="" autoplay="">
@@ -49,7 +75,7 @@
                       <p>Gallery</p></a><a class="menu-con__btn" href="#">
                       <p>Floor plans</p></a></div>
                   <div class="top-nav">
-                    <div class="top-nav__btn" id="menu-back">
+                    <div class="top-nav__btn menu-close" id="menu-back">
                       <svg width="42" height="41" viewbox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23.8284 20.0019L40.4284 3.42688C40.7474 3.03829 40.9104 2.54496 40.8857 2.04285C40.861 1.54075 40.6505 1.06577 40.295 0.710298C39.9395 0.354828 39.4646 0.144287 38.9625 0.119627C38.4604 0.094967 37.967 0.257951 37.5784 0.576877L21.0034 17.1769L4.42844 0.576877C4.03985 0.257951 3.54652 0.094967 3.04441 0.119627C2.54231 0.144287 2.06733 0.354828 1.71186 0.710298C1.35639 1.06577 1.14585 1.54075 1.12119 2.04285C1.09653 2.54496 1.25951 3.03829 1.57844 3.42688L18.1784 20.0019L1.57844 36.5769C1.20287 36.9561 0.992188 37.4682 0.992188 38.0019C0.992188 38.5356 1.20287 39.0477 1.57844 39.4269C1.96072 39.7965 2.47167 40.0031 3.00344 40.0031C3.5352 40.0031 4.04616 39.7965 4.42844 39.4269L21.0034 22.8269L37.5784 39.4269C37.9607 39.7965 38.4717 40.0031 39.0034 40.0031C39.5352 40.0031 40.0462 39.7965 40.4284 39.4269C40.804 39.0477 41.0147 38.5356 41.0147 38.0019C41.0147 37.4682 40.804 36.9561 40.4284 36.5769L23.8284 20.0019Z" fill="white"></path>
                       </svg>
@@ -73,7 +99,7 @@
                       </div>
                       <p>Menu</p>
                     </div>
-                    <div class="menu-nav__broshure">Broshure</div>
+                    <div class="menu-nav__broshure broshure-open">Broshure</div>
                   </div>
                 </div><a class="header-number show-number" data-number="+971 56 777-77-77" id="number">+971 56 XXX-XX-XX show number</a>
               </div>
@@ -102,10 +128,12 @@
                   <video class="banner-video" muted="" loop="" autoplay="">
                     <source src="./files/banner-video.mp4" type="video/mp4">
                   </video>
-                  <div class="slide-container">
-                    <div class="slide-learn-more">
-                      <p>STUNNING TOWER <span class="learn-more-span">IN AL SAFA</span></p>
-                      <div class="learn-more-btn"><a href="#">Learn more</a></div>
+                  <div class="slide-bg">
+                    <div class="slide-container">
+                      <div class="slide-learn-more">
+                        <p>STUNNING TOWER<span class="learn-more-span">IN AL SAFA</span></p>
+                        <div class="learn-more-btn"><a href="#">Learn more</a></div>
+                      </div>
                     </div>
                   </div>
                   <div class="view-project"><a href="#">view project
@@ -118,17 +146,19 @@
                   <video class="banner-video" muted="" loop="" autoplay="">
                     <source src="./files/banner-video.mp4" type="video/mp4">
                   </video>
-                  <div class="slide-container">
-                    <div class="slide-learn-more">
-                      <p>STUNNING TOWER <span class="learn-more-span">IN AL SAFA</span></p>
-                      <div class="learn-more-btn"></div><a href="#">Learn more</a>
+                  <div class="slide-bg">
+                    <div class="slide-container">
+                      <div class="slide-learn-more">
+                        <p>STUNNING TOWER<span class="learn-more-span">IN AL SAFA</span></p>
+                        <div class="learn-more-btn"><a href="#">Learn more</a></div>
+                      </div>
                     </div>
-                    <div class="view-project"><a href="#">view project
-                        <svg id="arrow-svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6 18L18 6" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
-                          <path d="M8.25 6H18V15.75" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg></a></div>
                   </div>
+                  <div class="view-project"><a href="#">view project
+                      <svg id="arrow-svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 18L18 6" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M8.25 6H18V15.75" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></a></div>
                 </div>
               </div>
               <div class="swiper-button-prev"></div>
@@ -637,14 +667,12 @@
               </div>
             </div>
             <div class="book-container">
-              <div class="bg-tower">
-                <picture>
-                  <source srcset="img/book.png" type="image/png"><img src="img/book.png" alt="" draggable="false">
-                </picture>
+              <div class="book-sticky"><picture><source srcset="img/book.webp" type="image/webp"><img src="img/book.png"></picture>
                 <div class="toning"></div>
-              </div>
-              <div class="text">
-                <p>PAY 10% <span>TO BOOK A UNIT</span></p>
+                <div class="sticky-bg"></div>
+                <div class="text">
+                  <p>PAY 10%</p>TO BOOK A UNIT
+                </div>
               </div>
             </div>
             <div class="payment">
@@ -736,7 +764,8 @@
                 <p>© 2022 All Rights Reserved</p>
               </div>
             </div>
+            <div class="broshure-con" id="broshureContainer"></div>
     </div>
-    <script src="js/app.min.js?_v=20221226163459"> </script>
+    <script src="js/app.min.js?_v=20230101155208"> </script>
   </body>
 </html>

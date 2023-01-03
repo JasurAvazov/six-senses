@@ -1,0 +1,25 @@
+.broshure-con{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: red;
+    z-index: 200;
+    transition: .3s;
+    display: none;
+}
+
+.opening{
+    animation: anim 1s linear;
+}
+
+@keyframes anim {
+    0%{
+        display: flex;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

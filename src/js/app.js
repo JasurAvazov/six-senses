@@ -6,6 +6,32 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js"
 
 gsap.registerPlugin(ScrollTrigger)
 
+const body = document.getElementById('body')
+const preloader = document.getElementById("preloader")
+const preloaderCon = document.querySelector(".preloader-con");
+const percent = document.querySelector("#percent");
+let perVal = 0;
+
+
+function preloaderFunc() {
+    body.style.overflowY = 'hidden'
+    let timeout = 40
+    let increment = setInterval(() => {
+        perVal += 1;
+        percent.textContent = `${perVal}%`;
+        if (perVal === 100) {
+            clearInterval(increment);
+            preloaderCon.classList.remove("active");
+        }
+    }, timeout);
+    setTimeout(() => {
+        preloader.classList.add('close')
+        body.style.overflowY = 'scroll'
+        setTimeout(() => {preloader.style.display = 'none'},500)
+    }, timeout*100)
+}
+preloaderFunc()
+
 gsap.utils.toArray(".places-top").forEach(section => {
     const tl = gsap.timeline({
             scrollTrigger: {
@@ -67,34 +93,37 @@ gsap.utils.toArray(".book-img").forEach(section => {
     tl
         .add('start')
         .fromTo(section, {
-            x: 150,
+            x: 100,
+            scale: 0.9,
+            opacity: 0.5,
             ease: "expo.ease",
         },{
             x: 0,
-            scale: 1.2,
+            scale: 1.1,
+            opacity: 1,
         }, 'start')
 })
 
-gsap.utils.toArray(".formInput").forEach(section => {
-    const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: section,
-                start: "top 90%",
-                end: "top 70%",
-                scrub: 2,
-                markers: false,
-            },
-            stagger: 0.2
-        });
-    tl
-        .add('start')
-        .from(section, {
-            x: -80,
-            opacity: 0,
-            ease: "expo.ease",
-            stagger: 0.2
-        }, 'start')
-})
+// gsap.utils.toArray(".formInput").forEach(section => {
+//     const tl = gsap.timeline({
+//             scrollTrigger: {
+//                 trigger: section,
+//                 start: "top 90%",
+//                 end: "top 70%",
+//                 scrub: 2,
+//                 markers: false,
+//             },
+//             stagger: 0.2
+//         });
+//     tl
+//         .add('start')
+//         .from(section, {
+//             x: -80,
+//             opacity: 0,
+//             ease: "expo.ease",
+//             stagger: 0.2
+//         }, 'start')
+// })
 
 gsap.utils.toArray(".developerAnim").forEach(section => {
     const tl = gsap.timeline({
@@ -133,7 +162,7 @@ gsap.utils.toArray(".book-container").forEach(section => {
 })
 
 SmoothScroll({
-    animationTime: 800,
+    animationTime: 1000,
     stepSize: 60,
     keyboardSupport: true,
     arrowScroll: 100,
@@ -249,20 +278,27 @@ window.addEventListener('scroll', (e) => {
 let menuOpened = false
 
 const menu_btn = document.querySelector('.menu-nav__menu')
-const menu_btn_back = document.getElementById('menu-back')
+const menu_btn_back = document.querySelectorAll('.menu-close')
 const menu = document.getElementById('menu')
+
 menu_btn.addEventListener('click',() => {
     menu.classList.add('menuOpened')
+    body.style.overflowY = 'hidden'
     menuOpened = true
 })
-menu_btn_back.addEventListener('click', () => {
-    menu.classList.remove('menuOpened')
+
+menu_btn_back.forEach(el => {
+    el.addEventListener('click', () => {
+        menu.classList.remove('menuOpened')
+        body.style.overflowY = 'scroll'
+    })
 })
 
 const numberClass = document.querySelectorAll('.show-number')
 numberClass?.forEach(el => {
     el.addEventListener('click', () => {
         el.innerHTML = el.getAttribute('data-number')
+        el.style.color = '#459A77'
     })
 })
 
@@ -304,13 +340,64 @@ const obj = document.getElementById('obj')
 
 ScrollTrigger.addEventListener("scrollEnd", () => {
     let top = window.scrollY
+    if (top === 0 && header.classList.contains('hide')){
+        header.classList.remove('hide')
+    }
     if (top > 300){
         setTimeout(() => {
             header.classList.add('hide')
         }, 2000)
     }
     if (menuOpened){
-        console.log(menuOpened)
         header.classList.remove('hide')
     }
 });
+
+const broshure = document.querySelectorAll(".broshure-open")
+
+broshure?.forEach(el => {
+    el.addEventListener('click', broshureOpen)
+})
+
+
+const broshureContainer = document.getElementById('broshureContainer')
+function broshureOpen() {
+    broshureContainer.classList.add('opening')
+}
+
+const foo = document.querySelector('.book-sticky').clientHeight / 2
+
+gsap.utils.toArray(".book-sticky").forEach(section => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "150% top",
+            scrub: true,
+            markers: false,
+        },
+    });
+    tl
+        .add('start')
+        .to(section.querySelector(".sticky-bg"), {
+            opacity: 0,
+            scale: 2,
+            duration: .4,
+        }, 'start')
+        .fromTo(section.querySelector(".text"), {
+            y: foo*5
+        },{
+            y: -foo+50
+        }, 'start')
+})
+
+
+const menuBtns = document.querySelectorAll('.menu-con__btn')
+menuBtns?.forEach(el => {
+    el.addEventListener('click', () => {
+        menuBtns?.forEach(all => {
+            all.classList.remove('active')
+            el.classList.add('active')
+        })
+    })
+})

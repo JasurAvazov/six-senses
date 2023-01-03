@@ -4,7 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
-
 // abstracts
 @import 
     'abstracts/variables',
@@ -12,7 +11,8 @@
     'abstracts/mixins';
 
 // components
-@import 
+@import
+    'components/preloader',
     'components/header',
     'components/main',
     'components/gallery',
@@ -20,7 +20,8 @@
     'components/developer',
     'components/book',
     'components/payment',
-    'components/footer';
+    'components/footer',
+    'components/broshure';
 *{
     padding: 0;
     margin: 0;
@@ -51,6 +52,7 @@ body{
 ::-webkit-scrollbar {
     width: 10px;
     background-color: #D9D9D9;
+    border-radius: 0;
 }
 
 ::-webkit-scrollbar-track {
@@ -64,28 +66,4 @@ body{
 
 ::-webkit-scrollbar-thumb:hover {
     background: #347258;
-}
-
-@media (max-width: 576px) {
-    .container{
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .container{
-        width: 576px;
-    }
-}
-
-@media (max-width: 992px){
-    .container{
-        width: 768px;
-    }
-}
-
-@media (max-width: 1200px){
-    .container{
-        width: 990px;
-    }
 }

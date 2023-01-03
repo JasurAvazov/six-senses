@@ -1,52 +1,48 @@
 .book-container{
     width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    .text{
+    height: 250vh;
+    .book-sticky{
+        height: 100vh;
         width: 100%;
-        height: 100%;
-        position: absolute;
+        position: sticky;
         top: 0;
-        left: 0;
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 10;
-        p{
-            font-weight: 400;
-            font-size: 48px;
-            max-width: 550px;
-            color: white;
-            line-height: 56px;
-            text-transform: uppercase;
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .toning{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .sticky-bg{
+            position: absolute;
+            top: 0;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+        }
+        .text{
             text-align: center;
-            font-family: 'Tenor Sans', sans-serif;
-            span{
-                white-space: nowrap;
+            position: absolute;
+            bottom: 0;
+            color: white;
+            font-size: 48px;
+            p{
+                font-family: 'Tenor Sans', sans-serif;
             }
         }
-    }
-}
-
-.bg-tower{
-    width: 100%;
-    height: 100%;
-    position: relative;
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .toning{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
     }
 }
