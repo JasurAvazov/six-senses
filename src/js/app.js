@@ -179,11 +179,12 @@ const swiper = new Swiper('.mySwiper', {
     }
 });
 
-const autoSwiper = new Swiper('.autoSwiper',{
+const autoSwiper = new Swiper(".twrSwiper", {
     modules: [Scrollbar, Autoplay],
     scrollbar: {
         el: ".swiper-scrollbar",
     },
+    spaceBetween: 20,
     simulateTouch: true,
     autoplay: {
         delay: 2000,
@@ -365,7 +366,26 @@ function broshureOpen() {
     broshureContainer.classList.add('opening')
 }
 
-const foo = document.querySelector('.book-sticky').clientHeight / 2
+const towersHeight = document.querySelector('.twr-sticky').clientHeight / 2
+gsap.utils.toArray(".twr-sticky").forEach(section => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "130% top",
+            scrub: true,
+            markers: false,
+        },
+    });
+    tl
+        .add('start')
+        .to(section.querySelector('.twr-title'), {
+            opacity: 0,
+            scale: 2,
+        }, 'start')
+})
+
+const bookHeight = document.querySelector('.twr-title').clientHeight / 2
 
 gsap.utils.toArray(".book-sticky").forEach(section => {
     const tl = gsap.timeline({
@@ -385,9 +405,9 @@ gsap.utils.toArray(".book-sticky").forEach(section => {
             duration: .4,
         }, 'start')
         .fromTo(section.querySelector(".text"), {
-            y: foo*5
+            y: bookHeight*5
         },{
-            y: -foo+50
+            y: -bookHeight+30
         }, 'start')
 })
 
