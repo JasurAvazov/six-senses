@@ -1,12 +1,12 @@
 .floor {
-    padding: 80px 10px;
     background-color: white;
     cursor: default;
+    overflow: hidden;
 }
 
 .floor__body{
     max-width: 1200px;
-    padding: 0 10px;
+    padding: 80px 20px;
     margin: auto;
 }
 

@@ -95,7 +95,6 @@ gsap.utils.toArray(".book-img").forEach(section => {
         .fromTo(section, {
             x: 100,
             scale: 0.9,
-            opacity: 0.5,
             ease: "expo.ease",
         },{
             x: 0,
@@ -104,26 +103,26 @@ gsap.utils.toArray(".book-img").forEach(section => {
         }, 'start')
 })
 
-// gsap.utils.toArray(".formInput").forEach(section => {
-//     const tl = gsap.timeline({
-//             scrollTrigger: {
-//                 trigger: section,
-//                 start: "top 90%",
-//                 end: "top 70%",
-//                 scrub: 2,
-//                 markers: false,
-//             },
-//             stagger: 0.2
-//         });
-//     tl
-//         .add('start')
-//         .from(section, {
-//             x: -80,
-//             opacity: 0,
-//             ease: "expo.ease",
-//             stagger: 0.2
-//         }, 'start')
-// })
+gsap.utils.toArray(".formInput").forEach(section => {
+    const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 90%",
+                end: "top 70%",
+                scrub: 2,
+                markers: false,
+            },
+            stagger: 0.2
+        });
+    tl
+        .add('start')
+        .from(section, {
+            x: -80,
+            opacity: 0,
+            ease: "expo.ease",
+            stagger: 0.2
+        }, 'start')
+})
 
 gsap.utils.toArray(".developerAnim").forEach(section => {
     const tl = gsap.timeline({
@@ -339,32 +338,38 @@ const obj = document.getElementById('obj')
 // });
 
 
-ScrollTrigger.addEventListener("scrollEnd", () => {
-    let top = window.scrollY
-    if (top === 0 && header.classList.contains('hide')){
-        header.classList.remove('hide')
-    }
-    if (top > 300){
-        setTimeout(() => {
-            header.classList.add('hide')
-        }, 2000)
-    }
-    if (menuOpened){
-        header.classList.remove('hide')
-    }
-});
+// ScrollTrigger.addEventListener("scrollEnd", () => {
+//     let top = window.scrollY
+//     if (top === 0 && header.classList.contains('hide')){
+//         header.classList.remove('hide')
+//     }
+//     if (top > 300){
+//         setTimeout(() => {
+//             header.classList.add('hide')
+//         }, 2000)
+//     }
+// });
 
-const broshure = document.querySelectorAll(".broshure-open")
+const broshureOpen = document.querySelectorAll(".broshure-open")
+const broshureClose = document.querySelectorAll('.broshure-close')
+const broshureContainer = document.getElementById('broshureContainer')
 
-broshure?.forEach(el => {
-    el.addEventListener('click', broshureOpen)
+broshureOpen?.forEach(el => {
+    el.addEventListener('click',() => {
+        broshureContainer.classList.add('opening')
+    })
+})
+
+broshureClose?.forEach(el => {
+    el.addEventListener('click', () => {
+        broshureContainer.classList.remove('opening')
+    })
 })
 
 
-const broshureContainer = document.getElementById('broshureContainer')
-function broshureOpen() {
-    broshureContainer.classList.add('opening')
-}
+
+
+
 
 const towersHeight = document.querySelector('.twr-sticky').clientHeight / 2
 gsap.utils.toArray(".twr-sticky").forEach(section => {
@@ -417,7 +422,27 @@ menuBtns?.forEach(el => {
     el.addEventListener('click', () => {
         menuBtns?.forEach(all => {
             all.classList.remove('active')
+            body.style.overflowY = 'hidden';
             el.classList.add('active')
         })
     })
 })
+
+// const foo = () => {
+//     let attributes = document.querySelectorAll('.numbers')
+//     attributes.forEach(el => {
+//         let attribute = Number(el.getAttribute('data-number')) + 1
+//         for (let i = 0; i < attribute; i++) {
+//             setTimeout(() => {
+//                 el.innerHTML = i.toString()
+//             },400)
+//         }
+//     })
+// }
+//
+// gsap.to(".payment", {
+//     scrollTrigger: ".payment",
+//     onStart: foo,
+//     markers: true,
+// });
+
