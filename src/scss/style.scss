@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
 // abstracts
 @import 
     'abstracts/variables',
@@ -12,7 +13,6 @@
 
 // components
 @import
-    'components/preloader',
     'components/header',
     'components/main',
     'components/gallery',
@@ -21,8 +21,8 @@
     'components/book',
     'components/payment',
     'components/footer',
-    'components/broshure',
-    'components/fonts';
+    'components/broshure';
+
 *{
     padding: 0;
     margin: 0;
@@ -48,6 +48,8 @@ body{
     overflow-x: hidden;
     background-color: black;
     cursor: default;
+    padding-top: var(--header-height);
+    min-width: 340px;
 }
 
 ::-webkit-scrollbar {
@@ -67,4 +69,13 @@ body{
 
 ::-webkit-scrollbar-thumb:hover {
     background: #347258;
+}
+
+.clear{
+    clear: both;
+}
+
+@font-face {
+    font-family: gilroy;
+    src: url("../fonts/Gilroy-Regular.ttf");
 }

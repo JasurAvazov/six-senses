@@ -17,8 +17,12 @@
         position: absolute;
         top: 0;
         left: 0;
+        display: block;
     }
     .popup{
+        width: 100%;
+    }
+    .popup-mobile{
         width: calc(100% - 24px);
         max-width: 351px;
         border-radius: 4px;
@@ -30,6 +34,9 @@
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        //@media (max-width: 768px) {
+        //    display: flex;
+        //}
         h2{
             font-size: 32px;
             font-weight: 400;
@@ -50,7 +57,6 @@
             font-size: 9px;
             line-height: 8px;
             color: #2D374D;
-            font-family: gilroy, serif;
             span{
                 &:first-child{
                     margin-left: 0;
@@ -103,6 +109,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
                 &:hover{
                     background-color: #459A77;
                     path{

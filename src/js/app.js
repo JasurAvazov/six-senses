@@ -1,36 +1,20 @@
 import * as functions from "./modules/functions.js";
-import Swiper, {Autoplay, EffectFade, Mousewheel, Navigation, Scrollbar} from "swiper";
-import SmoothScroll from 'smoothscroll-for-websites'
+import Swiper, {Autoplay, EffectFade, FreeMode, Mousewheel, Navigation, Scrollbar} from "swiper";
+// import SmoothScroll from 'smoothscroll-for-websites'
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js"
+
+// SmoothScroll({
+//     animationTime: 1000,
+//     stepSize: 60,
+//     keyboardSupport: true,
+//     arrowScroll: 100,
+//     touchpadSupport: true
+// })
 
 gsap.registerPlugin(ScrollTrigger)
 
 const body = document.getElementById('body')
-const preloader = document.getElementById("preloader")
-const preloaderCon = document.querySelector(".preloader-con");
-const percent = document.querySelector("#percent");
-let perVal = 0;
-
-
-function preloaderFunc() {
-    body.style.overflowY = 'hidden'
-    let timeout = 40
-    let increment = setInterval(() => {
-        perVal += 1;
-        percent.textContent = `${perVal}%`;
-        if (perVal === 100) {
-            clearInterval(increment);
-            preloaderCon.classList.remove("active");
-        }
-    }, timeout);
-    setTimeout(() => {
-        preloader.classList.add('close')
-        body.style.overflowY = 'scroll'
-        setTimeout(() => {preloader.style.display = 'none'},500)
-    }, timeout*100)
-}
-preloaderFunc()
 
 gsap.utils.toArray(".places-top").forEach(section => {
     const tl = gsap.timeline({
@@ -158,14 +142,6 @@ gsap.utils.toArray(".book-container").forEach(section => {
         .to(section.querySelector(".text"), { 
             scale: 1.2,
         }, 'start')
-})
-
-SmoothScroll({
-    animationTime: 1000,
-    stepSize: 60,
-    keyboardSupport: true,
-    arrowScroll: 100,
-    touchpadSupport: true
 })
 
 functions.isWebp();
@@ -303,7 +279,7 @@ numberClass?.forEach(el => {
 })
 
 const swiper1 = new Swiper(".gallerySwiper", {
-    modules: [Scrollbar, Mousewheel],
+    modules: [Scrollbar, Mousewheel, FreeMode],
     mousewheel: false,
     slidesPerView: 'auto',
     freeMode: true,
@@ -428,21 +404,46 @@ menuBtns?.forEach(el => {
     })
 })
 
-// const foo = () => {
-//     let attributes = document.querySelectorAll('.numbers')
-//     attributes.forEach(el => {
-//         let attribute = Number(el.getAttribute('data-number')) + 1
-//         for (let i = 0; i < attribute; i++) {
-//             setTimeout(() => {
-//                 el.innerHTML = i.toString()
-//             },400)
-//         }
-//     })
-// }
-//
-// gsap.to(".payment", {
-//     scrollTrigger: ".payment",
-//     onStart: foo,
-//     markers: true,
-// });
+const gallery = document.querySelector('.gallery')
+const floor = document.querySelector('.floor')
 
+let tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.gallery',
+        start: 'top top',
+        end: 'top top',
+        markers: false,
+        onEnter: () => {
+            console.log('hello')
+            swiper1.mousewheel.enable()
+            body.style.overflowY = 'hidden'
+            gallery.style.position = 'fixed'
+            gallery.style.top = '0'
+            floor.style.marginTop = '100vh'
+            // document.querySelector('.gallery').style.backgroundColor = 'red'
+        },
+        onEnterBack: () => {
+            console.log('bye bye')
+            swiper1.mousewheel.enable()
+            body.style.overflowY = 'hidden'
+            gallery.style.position = 'fixed'
+            gallery.style.top = '0'
+            floor.style.marginTop = '100vh'
+            // document.querySelector('.gallery').style.backgroundColor = 'green'
+        }
+    }
+});
+
+swiper1.on('reachEnd', function(){
+    swiper1.mousewheel.disable()
+    gallery.style.position = 'relative'
+    floor.style.marginTop = '0'
+    body.style.overflowY = 'auto'
+});
+
+swiper1.on('reachBeginning', function(){
+    swiper1.mousewheel.disable()
+    gallery.style.position = 'relative'
+    floor.style.marginTop = '0'
+    body.style.overflowY = 'auto'
+});
