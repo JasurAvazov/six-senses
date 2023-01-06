@@ -5,13 +5,13 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js"
 
 
-// SmoothScroll({
-//     animationTime: 1000,
-//     stepSize: 60,
-//     keyboardSupport: true,
-//     arrowScroll: 100,
-//     touchpadSupport: true
-// })
+SmoothScroll({
+    animationTime: 1000,
+    stepSize: 60,
+    keyboardSupport: true,
+    arrowScroll: 100,
+    touchpadSupport: true
+})
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -381,7 +381,6 @@ let tl = gsap.timeline({
             gallery.style.position = 'fixed'
             gallery.style.top = '0'
             floor.style.marginTop = '100vh'
-            // document.querySelector('.gallery').style.backgroundColor = 'red'
         },
         onEnterBack: () => {
             console.log('bye bye')
@@ -390,7 +389,6 @@ let tl = gsap.timeline({
             gallery.style.position = 'fixed'
             gallery.style.top = '0'
             floor.style.marginTop = '100vh'
-            // document.querySelector('.gallery').style.backgroundColor = 'green'
         }
     }
 });
