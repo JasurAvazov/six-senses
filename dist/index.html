@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230106122109">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230106124800">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20230106122109">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20230106124800">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   </head>
   <body id="body">
     <div class="wrapper">
-            <div class="menu" id="menu">
+            <header id="header">
+              <div class="header container">
+                <div class="header-left"><a class="logo" href="#"><img src="img/logo.svg" alt="logo"></a>
+                  <div class="menu-nav">
+                    <div class="menu-nav__menu">
+                      <div class="menu__lines">
+                        <div></div>
+                      </div>
+                      <p>Menu</p>
+                    </div>
+                    <div class="menu-nav__broshure broshure-open">Brochure</div>
+                  </div>
+                </div><a class="header-number show-number" data-number="+971 56 777-77-77" id="number">+971 56 XXX-XX-XX show number</a>
+              </div>
+            </header>
+            <nav class="menu" id="menu">
               <div class="menu-mobile">
                 <video class="menu__banner" muted="" loop="" autoplay="">
                   <source src="./files/banner-video.mp4" type="video/mp4">
@@ -84,111 +99,98 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <header id="header">
-              <div class="header container">
-                <div class="header-left"><a class="logo" href="#"><img src="img/logo.svg" alt="logo"></a>
-                  <div class="menu-nav">
-                    <div class="menu-nav__menu">
-                      <div class="menu__lines">
-                        <div></div>
-                      </div>
-                      <p>Menu</p>
+            </nav>
+            <section class="intro" id="intro">
+              <div id="swiper-mobile">
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="toning"></div>
+                      <video class="banner-video" muted="" loop="" autoplay="">
+                        <source src="./files/banner-video.mp4" type="video/mp4">
+                      </video>
                     </div>
-                    <div class="menu-nav__broshure broshure-open">Brochure</div>
+                    <div class="swiper-slide">
+                      <div class="toning"></div>
+                      <video class="banner-video" muted="" loop="" autoplay="">
+                        <source src="./files/banner-video.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="toning"></div>
+                      <video class="banner-video" muted="" loop="" autoplay="">
+                        <source src="./files/banner-video.mp4" type="video/mp4">
+                      </video>
+                    </div>
                   </div>
-                </div><a class="header-number show-number" data-number="+971 56 777-77-77" id="number">+971 56 XXX-XX-XX show number</a>
+                </div>
+                <div class="learn-more__block">
+                  <p>STUNNING TOWER <span>IN AL SAFA</span></p>
+                  <button>learn more</button>
+                </div>
               </div>
-            </header>
-            <div id="swiper-mobile">
-              <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
+              <div class="swiper mySwiper" id="swiper">
+                <div class="swiper-wrapper swiperWrapper">
                   <div class="swiper-slide">
-                    <div class="toning"></div>
                     <video class="banner-video" muted="" loop="" autoplay="">
                       <source src="./files/banner-video.mp4" type="video/mp4">
                     </video>
+                    <div class="slide-bg">
+                      <div class="slide-container">
+                        <div class="slide-learn-more">
+                          <p>STUNNING TOWER <span class="learn-more-span">IN AL SAFA</span></p>
+                          <div class="learn-more-btn"><a href="#">Learn more</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="view-project"><a href="#">view project
+                        <svg id="arrow-svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 18L18 6" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M8.25 6H18V15.75" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="toning"></div>
                     <video class="banner-video" muted="" loop="" autoplay="">
                       <source src="./files/banner-video.mp4" type="video/mp4">
                     </video>
+                    <div class="slide-bg">
+                      <div class="slide-container">
+                        <div class="slide-learn-more">
+                          <p>STUNNING TOWER<span class="learn-more-span">IN AL SAFA</span></p>
+                          <div class="learn-more-btn"><a href="#">Learn more</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="view-project"><a href="#">view project
+                        <svg id="arrow-svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 18L18 6" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M8.25 6H18V15.75" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a></div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="toning"></div>
                     <video class="banner-video" muted="" loop="" autoplay="">
                       <source src="./files/banner-video.mp4" type="video/mp4">
                     </video>
-                  </div>
-                </div>
-              </div>
-              <div class="learn-more__block">
-                <p>STUNNING TOWER <span>IN AL SAFA</span></p>
-                <button>learn more</button>
-              </div>
-            </div>
-            <div class="swiper mySwiper" id="swiper">
-              <div class="swiper-wrapper swiperWrapper">
-                <div class="swiper-slide">
-                  <video class="banner-video" muted="" loop="" autoplay="">
-                    <source src="./files/banner-video.mp4" type="video/mp4">
-                  </video>
-                  <div class="slide-bg">
-                    <div class="slide-container">
-                      <div class="slide-learn-more">
-                        <p>STUNNING TOWER <span class="learn-more-span">IN AL SAFA</span></p>
-                        <div class="learn-more-btn"><a href="#">Learn more</a></div>
+                    <div class="slide-bg">
+                      <div class="slide-container">
+                        <div class="slide-learn-more">
+                          <p>STUNNING TOWER<span class="learn-more-span">IN AL SAFA</span></p>
+                          <div class="learn-more-btn"><a href="#">Learn more</a></div>
+                        </div>
                       </div>
                     </div>
+                    <div class="view-project"><a href="#">view project
+                        <svg id="arrow-svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6 18L18 6" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
+                          <path d="M8.25 6H18V15.75" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg></a></div>
                   </div>
-                  <div class="view-project"><a href="#">view project
-                      <svg id="arrow-svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 18L18 6" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M8.25 6H18V15.75" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg></a></div>
                 </div>
-                <div class="swiper-slide">
-                  <video class="banner-video" muted="" loop="" autoplay="">
-                    <source src="./files/banner-video.mp4" type="video/mp4">
-                  </video>
-                  <div class="slide-bg">
-                    <div class="slide-container">
-                      <div class="slide-learn-more">
-                        <p>STUNNING TOWER<span class="learn-more-span">IN AL SAFA</span></p>
-                        <div class="learn-more-btn"><a href="#">Learn more</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="view-project"><a href="#">view project
-                      <svg id="arrow-svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 18L18 6" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M8.25 6H18V15.75" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg></a></div>
-                </div>
-                <div class="swiper-slide">
-                  <video class="banner-video" muted="" loop="" autoplay="">
-                    <source src="./files/banner-video.mp4" type="video/mp4">
-                  </video>
-                  <div class="slide-bg">
-                    <div class="slide-container">
-                      <div class="slide-learn-more">
-                        <p>STUNNING TOWER<span class="learn-more-span">IN AL SAFA</span></p>
-                        <div class="learn-more-btn"><a href="#">Learn more</a></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="view-project"><a href="#">view project
-                      <svg id="arrow-svg" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 18L18 6" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M8.25 6H18V15.75" stroke="white" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg></a></div>
-                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
               </div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-            </div>
-            <div class="places-pic">
+            </section>
+            <section class="places-pic" id="place">
               <div class="pp-con">
                 <h1 class="places-title">SKY HIGH LUXURY</h1>
                 <p class="places-paragraph">Safa One is an architectural treasure with lush garden terraces on every level. The project offers two unique beach pools and a luxurious collection of apartments with 1, 2, and 3 bedrooms.</p>
@@ -301,8 +303,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="about-project">
+            </section>
+            <section class="about-project" id="about"> 
               <div class="ap-con">
                 <div class="registration-panel">
                   <h1 class="register-info formInput">
@@ -338,8 +340,8 @@
                   </picture>
                 </div>
               </div>
-            </div>
-            <div class="towers">
+            </section>
+            <section class="towers">
               <div class="twr-con">
                 <div class="twr-sticky">
                   <div class="twr-title">
@@ -380,8 +382,8 @@
               <div class="map-title">
                 <p>A COMFORTABLE PLACE <br />FOR LIVING</p>
               </div>
-            </div>
-            <div class="map">
+            </section>
+            <section class="map"> 
               <div class="bg-map active" id="map1"><picture><source srcset="img/map-all.webp" type="image/webp"><img src="img/map-all.png" alt=""></picture></div>
               <div class="bg-map" id="map2"><picture><source srcset="img/map-edu.webp" type="image/webp"><img src="img/map-edu.png" alt=""></picture></div>
               <div class="bg-map" id="map3"><picture><source srcset="img/map-shop.webp" type="image/webp"><img src="img/map-shop.png" alt=""></picture></div>
@@ -392,83 +394,7 @@
                 <button class="map-btn" data-target="#map3">Shopping</button>
                 <button class="map-btn" data-target="#map4">Leisure</button>
               </div>
-            </div>
-            <div class="gallery">
-              <div class="swiper gallerySwiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide gallery-slide first" draggable="false">
-                    <div class="text">
-                      <h2 class="title" draggable="false">INTERIOR DESIGN</h2>
-                      <p class="paragraph" draggable="false">The architectural design of the building replicates a masterpiece necklace created by Fawaz Gruosi, the founder of de GRISOGONO. Unique to the design and the tower-duo is the deep, royal shade of emerald green, which will be a signature identity of this ultra-luxury residential complex.</p>
-                    </div>
-                  </div>
-                  <div class="swiper-slide gallery-slide" draggable="false">
-                    <div class="slide-box">
-                      <picture>
-                        <source srcset="img/gallery-1.png" type="image/png"><img src="img/gallery-1.png" alt="" draggable="false">
-                      </picture>
-                    </div>
-                  </div>
-                  <div class="swiper-slide gallery-slide" draggable="false">
-                    <div class="slide-box">
-                      <picture>
-                        <source srcset="img/gallery-2.png" type="image/png"><img src="img/gallery-1.png" alt="" draggable="false">
-                      </picture>
-                    </div>
-                  </div>
-                  <div class="swiper-slide gallery-slide" draggable="false">
-                    <div class="slide-box">
-                      <picture>
-                        <source srcset="img/gallery-3.png" type="image/png"><img src="img/gallery-1.png" alt="" draggable="false">
-                      </picture>
-                    </div>
-                  </div>
-                  <div class="swiper-slide gallery-slide" draggable="false">
-                    <div class="slide-box">
-                      <picture>
-                        <source srcset="img/gallery-4.png" type="image/png"><img src="img/gallery-1.png" alt="" draggable="false">
-                      </picture>
-                    </div>
-                  </div>
-                  <div class="swiper-slide gallery-slide" draggable="false">
-                    <div class="slide-box">
-                      <picture>
-                        <source srcset="img/gallery-5.png" type="image/png"><img src="img/gallery-1.png" alt="" draggable="false">
-                      </picture>
-                    </div>
-                  </div>
-                  <div class="swiper-slide gallery-slide" draggable="false">
-                    <div class="slide-box">
-                      <picture>
-                        <source srcset="img/gallery-1.png" type="image/png"><img src="img/gallery-1.png" alt="" draggable="false">
-                      </picture>
-                    </div>
-                  </div>
-                  <div class="swiper-slide gallery-slide" draggable="false">
-                    <div class="slide-box">
-                      <picture>
-                        <source srcset="img/gallery-1.png" type="image/png"><img src="img/gallery-1.png" alt="" draggable="false">
-                      </picture>
-                    </div>
-                  </div>
-                  <div class="swiper-slide gallery-slide" draggable="false">
-                    <div class="slide-box">
-                      <picture>
-                        <source srcset="img/gallery-1.png" type="image/png"><img src="img/gallery-1.png" alt="" draggable="false">
-                      </picture>
-                    </div>
-                  </div>
-                  <div class="last swiper-slide gallery-slide" draggable="false">
-                    <div class="slide-box">
-                      <picture>
-                        <source srcset="img/gallery-1.png" type="image/png"><img src="img/gallery-1.png" alt="" draggable="false">
-                      </picture>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-scrollbar" id="gallery-scrollbar"></div>
-              </div>
-            </div>
+            </section>
             <section class="section floor" id="floor">
               <div class="floor__body container"> 
                 <h2 class="floor__title">Floor plans</h2>
@@ -683,7 +609,7 @@
                 </div>
               </div>
             </section>
-            <div class="about-developer__container">
+            <section class="about-developer__container">
               <div class="ad-top developerAnim">
                 <div class="ad-title">reliable developer</div>
                 <svg width="152" height="38" viewbox="0 0 152 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -702,8 +628,8 @@
                   <div class="project-box"><picture><source srcset="img/project-3.webp" type="image/webp"><img draggable="false" src="img/project-3.png" alt=""></picture></div>
                 </div>
               </div>
-            </div>
-            <div class="book-container">
+            </section>
+            <section class="book-container">
               <div class="book-sticky"><picture><source srcset="img/book.webp" type="image/webp"><img src="img/book.png"></picture>
                 <div class="toning"></div>
                 <div class="sticky-bg"></div>
@@ -711,8 +637,8 @@
                   <p>PAY 10%</p>TO BOOK A UNIT
                 </div>
               </div>
-            </div>
-            <div class="payment">
+            </section>
+            <section class="payment">
               <div class="container">
                 <h1 class="payment-title">PAYMENT PLAN</h1>
                 <div class="percents">
@@ -750,8 +676,8 @@
                       <source srcset="img/partner-1-6.png" type="image/png"><img src="img/partner-1-6.png" alt="" draggable="false">
                     </picture></a></div>
               </div>
-            </div>
-            <div class="footer">
+            </section>
+            <footer class="footer">
               <div class="bg-panel">
                 <video muted="" loop="" autoplay="">
                   <source src="./files/banner-video.mp4" type="video/mp4">
@@ -800,8 +726,8 @@
               <div class="copyright">
                 <p>© 2022 All Rights Reserved</p>
               </div>
-            </div>
-            <div class="broshure-con" id="broshureContainer">
+            </footer>
+            <section class="broshure-con" id="broshureContainer">
               <div class="blur broshure-close"></div>
               <div class="popup">
                 <div class="popup__bg">
@@ -851,8 +777,8 @@
                 </div>
                 <p class="close broshure-close">close</p>
               </div>
-            </div>
+            </section>
     </div>
-    <script src="js/app.min.js?_v=20230106122109"> </script>
+    <script src="js/app.min.js?_v=20230106124800"> </script>
   </body>
 </html>

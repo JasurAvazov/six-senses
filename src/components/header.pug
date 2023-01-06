@@ -1,5 +1,18 @@
 mixin header()
-    #menu.menu
+    header#header
+        .header.container
+            .header-left
+                a(href="#").logo
+                    img(src="@img/logo.svg" alt="logo")
+                .menu-nav
+                    .menu-nav__menu
+                        .menu__lines
+                            div
+                        p Menu
+                    .menu-nav__broshure.broshure-open Brochure
+
+            a(data-number="+971 56 777-77-77")#number.header-number.show-number +971 56 XXX-XX-XX show number
+    nav#menu.menu
         .menu-mobile
             video.menu__banner(muted='' loop='' autoplay='')
                 source(src='./files/banner-video.mp4' type='video/mp4')
@@ -77,17 +90,3 @@ mixin header()
                     .top-nav__btn
                         svg(width='50' height='51' viewbox='0 0 50 51' fill='none' xmlns='http://www.w3.org/2000/svg')
                             path(d='M47.5 33.6029L35.775 28.6029C35.17 28.3318 34.5059 28.2193 33.8454 28.2762C33.1849 28.3331 32.5497 28.5574 32 28.9279L25.725 33.1029C21.9006 31.2455 18.8042 28.1667 16.925 24.3529L21.075 18.0029C21.4431 17.4526 21.6679 16.8191 21.729 16.1599C21.7902 15.5006 21.6857 14.8366 21.425 14.228L16.4 2.50295C16.0494 1.71123 15.4556 1.05179 14.7049 0.620258C13.9543 0.188722 13.0856 0.00752679 12.225 0.102949C8.84898 0.54521 5.74843 2.19838 3.49981 4.7551C1.25118 7.31181 0.00750589 10.5981 0 14.0029C0 33.853 16.15 50.0029 36 50.0029C39.4049 49.9954 42.6911 48.7518 45.2479 46.5031C47.8046 44.2545 49.4577 41.154 49.9 37.778C49.9954 36.9173 49.8142 36.0487 49.3827 35.298C48.9512 34.5473 48.2917 33.9536 47.5 33.6029Z' fill='white')
-
-    header#header
-        .header.container
-            .header-left
-                a(href="#").logo
-                    img(src="@img/logo.svg" alt="logo")
-                .menu-nav
-                    .menu-nav__menu
-                        .menu__lines
-                            div
-                        p Menu
-                    .menu-nav__broshure.broshure-open Brochure
-
-            a(data-number="+971 56 777-77-77")#number.header-number.show-number +971 56 XXX-XX-XX show number
