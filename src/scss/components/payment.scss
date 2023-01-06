@@ -4,6 +4,9 @@
     overflow: hidden;
     .container{
         padding: 80px 20px 140px;
+        @media (max-width: 768px) {
+            padding: 64px 15px;
+        }
     }
 }
 
@@ -14,6 +17,12 @@
     text-align: center;
     font-family: 'Tenor Sans', sans-serif;
     margin-bottom: 56px;
+    @media (max-width: 992px){
+        font-size: 44px;
+    }
+    @media (max-width: 768px){
+        font-size: 32px;
+    }
 }
 
 .percents{
@@ -40,6 +49,12 @@
         font-family: 'Tenor Sans', sans-serif;
         line-height: 131px;
         font-size: 112px;
+        @media (max-width: 992px) {
+            font-size: 86px;
+        }
+        @media (max-width: 768px) {
+            font-size: 72px;
+        }
     }
     p{
         font-weight: 400;
@@ -56,6 +71,12 @@
     font-family: 'Tenor Sans', sans-serif;
     text-align: center;
     margin-bottom: 64px;
+    @media (max-width: 992px) {
+        font-size: 44px;
+    }
+    @media (max-width: 768px) {
+        font-size: 32px;
+    }
 }
 
 .partners{
@@ -63,9 +84,21 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 64px 128px;
+    @media (max-width: 768px){
+        gap: 54px 54px;
+    }
     img{
         width: 206px;
         transition: .2s;
+        @media (max-width: 768px) {
+            width: 160px;
+        }
+        @media (max-width: 420px) {
+            width: 140px;
+        }
+        @media (max-width: 364px) {
+            width: 125px;
+        }
         &:hover{
             transform: scale(1.1);
         }

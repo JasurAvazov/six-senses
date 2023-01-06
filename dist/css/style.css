@@ -2815,6 +2815,11 @@
 .payment .container {
   padding: 80px 20px 140px;
 }
+@media (max-width: 768px) {
+  .payment .container {
+    padding: 64px 15px;
+  }
+}
 
 .payment-title {
   font-weight: 400;
@@ -2823,6 +2828,16 @@
   text-align: center;
   font-family: "Tenor Sans", sans-serif;
   margin-bottom: 56px;
+}
+@media (max-width: 992px) {
+  .payment-title {
+    font-size: 44px;
+  }
+}
+@media (max-width: 768px) {
+  .payment-title {
+    font-size: 32px;
+  }
 }
 
 .percents {
@@ -2869,6 +2884,16 @@
   line-height: 131px;
   font-size: 112px;
 }
+@media (max-width: 992px) {
+  .percents-item h3 {
+    font-size: 86px;
+  }
+}
+@media (max-width: 768px) {
+  .percents-item h3 {
+    font-size: 72px;
+  }
+}
 .percents-item p {
   font-weight: 400;
   font-family: "Tenor Sans", sans-serif;
@@ -2884,6 +2909,16 @@
   text-align: center;
   margin-bottom: 64px;
 }
+@media (max-width: 992px) {
+  .partners-title {
+    font-size: 44px;
+  }
+}
+@media (max-width: 768px) {
+  .partners-title {
+    font-size: 32px;
+  }
+}
 
 .partners {
   display: -webkit-box;
@@ -2896,11 +2931,31 @@
       flex-wrap: wrap;
   gap: 64px 128px;
 }
+@media (max-width: 768px) {
+  .partners {
+    gap: 54px 54px;
+  }
+}
 .partners img {
   width: 206px;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
+}
+@media (max-width: 768px) {
+  .partners img {
+    width: 160px;
+  }
+}
+@media (max-width: 420px) {
+  .partners img {
+    width: 140px;
+  }
+}
+@media (max-width: 364px) {
+  .partners img {
+    width: 125px;
+  }
 }
 .partners img:hover {
   -webkit-transform: scale(1.1);
@@ -3106,6 +3161,11 @@
     font-size: 18px;
   }
 }
+@media (max-width: 400px) {
+  .panel-container .left .logo .text {
+    font-size: 16px;
+  }
+}
 .panel-container .right {
   width: 50%;
   display: -webkit-box;
@@ -3130,6 +3190,12 @@
 @media (max-width: 1200px) {
   .panel-container .right .menu__contactUs-title {
     font-size: 52px;
+  }
+}
+@media (max-width: 400px) {
+  .panel-container .right .menu__contactUs-title {
+    font-size: 38px;
+    text-align: center;
   }
 }
 .panel-container .right .menu__contactUs {

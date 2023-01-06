@@ -141,6 +141,9 @@
                 @media (max-width: 1200px){
                     font-size: 18px;
                 }
+                @media (max-width: 400px){
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -157,6 +160,10 @@
         .menu__contactUs-title{
             @media(max-width: 1200px){
                 font-size: 52px;
+            }
+            @media(max-width: 400px){
+                font-size: 38px;
+                text-align: center;
             }
         }
         .menu__contactUs{
