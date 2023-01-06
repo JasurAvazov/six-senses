@@ -227,8 +227,8 @@
     margin: auto;
     flex-direction: column;
     overflow: hidden;
-    @media (max-width: 470px){
-        padding: 64px 20px 100px;
+    @include media(575){
+        padding: 64px 15px;
     }
 }
 
@@ -454,10 +454,31 @@
     height: 528px;
     overflow-x: hidden;
     background: linear-gradient(70deg, white 64%, #459A77 36%);
+    @include media(992){
+        background-image: linear-gradient(270deg, #459A77 0%, #2F6D4D 100%);
+        position: relative;
+        overflow: hidden;
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: 56px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 56px);
+            background-image: url('../img/form-form.svg');
+            background-repeat: no-repeat;
+            background-position: bottom;
+            // background-size: 100% 100%;
+            object-fit: cover;
+            background-size: cover;
+        }
+    }
+    @include media(768){
+        height: max-content; 
+    }
 }
 
 .ap-con{
-    max-width: 1200px;
     width: 100%;
     height: 100%;
     padding-left: 20px;
@@ -466,6 +487,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include media(768){
+        flex-direction: column;
+        padding-bottom: 50px;
+    }
+    @include media(575){
+        padding-left: 15px; 
+        padding-right: 15px;
+    }
 }
 
 .registration-panel{
@@ -477,23 +506,48 @@
     justify-content: space-between;
     flex-direction: column;
     cursor: default;
+    z-index: 2;
+    position: relative;
+    @include media(768){
+        height: max-content;
+        margin-bottom: 50px;
+        align-items: center;
+    }
 }
 
 .registration-panel h1{
-    width: 390px;
+    max-width: 390px;
+    width: 100%;
     font-size: 32px;
     font-weight: 400;
     line-height: 37px;
     text-transform: uppercase;
     font-family: 'Tenor Sans', sans-serif;
+    @include media(768){
+        margin-bottom: 16px;
+        font-weight: 400;
+        text-align: center;
+        font-size: 21px;
+        line-height: 25px;
+    }
 }
 
 .checked-text{
     font-size: 13px;
     line-height: 13px;
     color: #2D374D;
+    @include media(768){
+        margin-bottom: 32px;
+    }
+    @include media(575){
+        font-weight: 400;
+        text-align: center;
+        font-size: 12px;
+        line-height: 100%;
+    }
     span{
         margin-left: 8px;
+        white-space: nowrap;
         &:first-child{
             margin-left: 0;
         }
@@ -510,12 +564,29 @@
     top: 30px;
     right: 0;
     width: calc(100% - 600px);
+    @include media(992){
+        right: 70px;
+        z-index: 1; 
+    }
+    @include media(768){
+        position: static;
+        width: 364.8px;
+        height: 250.4px;
+        margin-top: -20px;
+        margin-left: -60px;
+    }
     img{
-        position: absolute;
+        position: absolute; 
         top: 0;
         left: 0;
+        // transform: rotate(6deg);
         rotate: 6deg;
         width: 570px;
+        @include media(768){
+            position: static;
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 
@@ -587,6 +658,17 @@
     align-items: center;
     color: rgba(0, 0, 0, 0.35);
     cursor: pointer;
+    transition: 300ms ease;
+    &:hover{
+        background-color: #459A77;
+        svg{
+            fill: #fff;
+        }
+    }
+    svg{
+        transition: 300ms ease;
+        fill: rgba(#000, .35);
+    }
 }
 
 .menu__about-project-btn{
@@ -652,6 +734,16 @@
     img{
         max-width: 1160px;
         width: 900px;
+        @include media(1200){
+            max-width: 800px;
+        }
+        @include media(992){
+            max-width: 600px;
+        }
+        @include media(768){
+            max-width: 320px;
+            width: 100%;
+        }
     }
     h3{
         text-align: center;
@@ -660,6 +752,16 @@
         font-family: 'Tenor Sans', sans-serif;
         line-height: 75px;
         text-transform: uppercase;
+        @include media(1200){
+            font-size: 56px;
+            line-height: 120%;
+        }
+        @include media(992){
+            font-size: 50px;
+        }
+        @include media(768){
+            font-size: 18px;
+        }
         span{
             color: #459A77;
             font-family: 'Tenor Sans', sans-serif;
@@ -670,10 +772,22 @@
 .twr-slider{
     width: 100%;
     height: 100vh;
+    @include media(1200){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .twrSwiper{
         height: 100%;
         margin: 0;
         padding: 60px 120px;
+        @include media(1200){
+            height: max-content;
+            padding: 60px 60px;
+        }
+        @include media(575){
+            padding: 60px 15px;
+        }
         .swiper-scrollbar-drag{
             background-color: #459A77 !important;
         }
@@ -704,7 +818,7 @@
 
 .map-title{
     width: 100%;
-    padding: 45px 20px 60px;
+    padding: 64px 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -714,6 +828,20 @@
         font-size: 64px;
         font-weight: 400;
         font-family: 'Tenor Sans', sans-serif;
+        @include media(992){
+            font-size: 56px;
+        }
+        @include media(768){
+            font-size: 46px;
+        }
+        @include media(575){
+            font-size: 32px;
+            line-height: 37px;
+        }
+        @include media(450){
+            font-size: 24px;
+            line-height: 120%;
+        }
     }
 }
 
@@ -756,6 +884,13 @@
     background-color: white;
     border-radius: 6px;
     display: flex;
+    @media (max-width: 860px){
+        top: 0;
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .map-btn {
@@ -767,6 +902,10 @@
     border-radius: 3px;
     margin-left: 10px;
     background-color: white;
+    @media (max-width: 860px) {
+        margin-left: 0;
+        padding: 12px 30px;
+    }
 }
 
 .map-btn:first-child{

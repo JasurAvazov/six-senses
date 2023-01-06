@@ -60,9 +60,9 @@ gsap.utils.toArray(".places-top").forEach((section) => {
       "start"
     )
     .from(
-      section.querySelector(".box-right-side"),
+      section.querySelector(".box-right-side"), 
       {
-        x: 200,
+        x: 200, 
         opacity: 0,
         ease: "expo.ease",
       },
@@ -101,31 +101,28 @@ gsap.utils.toArray(".places-bottom").forEach((section) => {
     );
 });
 
-gsap.utils.toArray(".book-img").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top 60%",
-      end: "top 20%",
-      scrub: 2,
-      markers: false,
-    },
-  });
-  tl.add("start").fromTo(
-    section,
-    {
-      x: 100,
-      scale: 0.9,
-      ease: "expo.ease",
-    },
-    {
-      x: 0,
-      scale: 1.1,
-      opacity: 1,
-    },
-    "start"
-  );
-});
+gsap.utils.toArray(".book-img").forEach(section => {
+    const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 60%",
+                end: "top 20%",
+                scrub: 2,
+                markers: false,
+            },
+        });
+    tl
+        .add('start')
+        .fromTo(section, {
+            x: 100,
+            scale: 0.9,
+            ease: "expo.ease",
+        },{
+            x: 0,
+            scale: 1.1,
+            opacity: 1,
+        }, 'start')
+})
 
 gsap.utils.toArray(".formInput").forEach((section) => {
   const tl = gsap.timeline({
@@ -166,25 +163,6 @@ gsap.utils.toArray(".developerAnim").forEach((section) => {
       y: 80,
       opacity: 0,
       stagger: 5,
-    },
-    "start"
-  );
-});
-
-gsap.utils.toArray(".book-container").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "30% 70%",
-      end: "30% 50%",
-      scrub: 2,
-      markers: false,
-    },
-  });
-  tl.add("start").to(
-    section.querySelector(".text"),
-    {
-      scale: 1.2,
     },
     "start"
   );
@@ -365,6 +343,7 @@ gsap.utils.toArray(".twr-sticky").forEach((section) => {
     {
       opacity: 0,
       scale: 2,
+    //   autoAlpha: true,
     },
     "start"
   );
@@ -467,6 +446,7 @@ menuBtns?.forEach((el) => {
         },
       })[0];
 
+
       function updateHandler() {
         gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
       }
@@ -491,6 +471,14 @@ menuBtns?.forEach((el) => {
     "(max-width: 1024px) and (min-width: 577px)": function () {
         let sections = gsap.utils.toArray(".gallery-slide");
 
+trigger = ScrollTrigger.create({
+  scroller: scroller,
+  start: 0,
+  end: "max",
+  onUpdate: updateHandler,
+});
+
+
         gsap.to(sections, {
           xPercent: -97.8 * (sections.length - 1),
           ease: "power1.out",
@@ -507,6 +495,7 @@ menuBtns?.forEach((el) => {
     "(max-width: 576px) and (min-width: 320px)": function () {
         let sections = gsap.utils.toArray(".gallery-slide");
 
+
         gsap.to(sections, {
           xPercent: -97.8 * (sections.length - 1),
           ease: "power1.out",
@@ -521,3 +510,55 @@ menuBtns?.forEach((el) => {
     },
   });
 })();
+
+function updateHandler() {
+  gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
+
+}
+
+
+
+gsap.utils.toArray(".book-container").forEach((section) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "30% 70%",
+      end: "30% 50%",
+      scrub: 2,
+      markers: false,
+    },
+  });
+  tl.add("start").to(
+    section.querySelector(".text"),
+    {
+      scale: 1.2,
+    },
+    "start"
+  );
+});
+
+function format_number(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+const n = document.querySelectorAll('.numbers');
+n.forEach(el => {
+  let value = { val: parseInt(el.getAttribute('data-number')), };
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: el,
+      start: "0% 90%",
+      end: "30% 50%",
+      markers: false,
+    }, 
+  });
+  tl.from(value, {
+    duration: 3,
+    ease: "circ.out",
+    val: 0,
+    roundProps: "val",
+    onUpdate: function () {
+      el.innerText = format_number(value.val);
+    },
+  });
+})
