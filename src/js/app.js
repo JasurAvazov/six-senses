@@ -444,7 +444,7 @@ gsap.utils.toArray(".book-container").forEach((section) => {
       start: "30% 70%",
       end: "30% 50%",
       scrub: 2,
-      markers: true,
+      markers: false,
     },
   });
   tl.add("start").to(
