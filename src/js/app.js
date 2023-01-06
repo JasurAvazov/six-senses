@@ -405,49 +405,53 @@ menuBtns?.forEach(el => {
     })
 })
 
-const gallery = document.querySelector('.gallery')
-const floor = document.querySelector('.floor')
 
-let tl = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.gallery',
-        start: 'top top',
-        end: 'top top',
-        markers: false,
-        onEnter: () => {
-            console.log('hello')
-            swiper1.mousewheel.enable()
-            body.style.overflowY = 'hidden'
-            gallery.style.position = 'fixed'
-            gallery.style.top = '0'
-            floor.style.marginTop = '100vh'
-            // document.querySelector('.gallery').style.backgroundColor = 'red'
-        },
-        onEnterBack: () => {
-            console.log('bye bye')
-            swiper1.mousewheel.enable()
-            body.style.overflowY = 'hidden'
-            gallery.style.position = 'fixed'
-            gallery.style.top = '0'
-            floor.style.marginTop = '100vh'
-            // document.querySelector('.gallery').style.backgroundColor = 'green'
-        }
-    }
-});
 
-swiper1.on('reachEnd', function(){
-    swiper1.mousewheel.disable()
-    gallery.style.position = 'relative'
-    floor.style.marginTop = '0'
-    body.style.overflowY = 'auto'
-});
+// ==============================================
 
-swiper1.on('reachBeginning', function(){
-    swiper1.mousewheel.disable()
-    gallery.style.position = 'relative'
-    floor.style.marginTop = '0'
-    body.style.overflowY = 'auto'
-});
+// const gallery = document.querySelector('.gallery')
+// const floor = document.querySelector('.floor')
+//
+// let tl = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: '.gallery',
+//         start: 'top top',
+//         end: 'top top',
+//         markers: false,
+//         onEnter: () => {
+//             console.log('hello')
+//             swiper1.mousewheel.enable()
+//             body.style.overflowY = 'hidden'
+//             gallery.style.position = 'fixed'
+//             gallery.style.top = '0'
+//             floor.style.marginTop = '100vh'
+//             // document.querySelector('.gallery').style.backgroundColor = 'red'
+//         },
+//         onEnterBack: () => {
+//             console.log('bye bye')
+//             swiper1.mousewheel.enable()
+//             body.style.overflowY = 'hidden'
+//             gallery.style.position = 'fixed'
+//             gallery.style.top = '0'
+//             floor.style.marginTop = '100vh'
+//             // document.querySelector('.gallery').style.backgroundColor = 'green'
+//         }
+//     }
+// });
+
+// swiper1.on('reachEnd', function(){
+//     swiper1.mousewheel.disable()
+//     gallery.style.position = 'relative'
+//     floor.style.marginTop = '0'
+//     body.style.overflowY = 'auto'
+// });
+//
+// swiper1.on('reachBeginning', function(){
+//     swiper1.mousewheel.disable()
+//     gallery.style.position = 'relative'
+//     floor.style.marginTop = '0'
+//     body.style.overflowY = 'auto'
+// });
 
 
 

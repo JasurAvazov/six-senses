@@ -21,6 +21,27 @@
     }
     .popup{
         width: 100%;
+        padding: 20px;
+        max-width: 1300px;
+        background-color: #36795d;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 100px;
+        position: absolute;
+        @media(max-width: 768px){
+            display: none;
+        }
+        .brochure-text{
+            font-size: 32px;
+            line-height: 39px;
+            p{
+                color: white;
+                span{
+                    color: #459A77;
+                }
+            }
+        }
     }
     .popup-mobile{
         width: calc(100% - 24px);
@@ -30,13 +51,13 @@
         background-color: white;
         position: absolute;
         animation: anim .4s ease-in-out;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        //@media (max-width: 768px) {
-        //    display: flex;
-        //}
+        @media (max-width: 768px) {
+            display: flex;
+        }
         h2{
             font-size: 32px;
             font-weight: 400;
