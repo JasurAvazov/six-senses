@@ -455,3 +455,29 @@ gsap.utils.toArray(".book-container").forEach((section) => {
     "start"
   );
 });
+
+function format_number(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+const n = document.querySelectorAll('.numbers');
+n.forEach(el => {
+  let value = { val: parseInt(el.getAttribute('data-number')), };
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: el,
+      start: "0% 90%",
+      end: "30% 50%",
+      markers: false,
+    }, 
+  });
+  tl.from(value, {
+    duration: 3,
+    ease: "circ.out",
+    val: 0,
+    roundProps: "val",
+    onUpdate: function () {
+      el.innerText = format_number(value.val);
+    },
+  });
+})
