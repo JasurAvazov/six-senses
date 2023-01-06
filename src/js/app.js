@@ -277,21 +277,6 @@ numberClass?.forEach(el => {
     })
 })
 
-const swiper1 = new Swiper(".gallerySwiper", {
-    modules: [Scrollbar, Mousewheel, FreeMode],
-    mousewheel: false,
-    slidesPerView: 'auto',
-    freeMode: true,
-    grabCursor: true,
-    scrollbar: {
-        el: ".swiper-scrollbar",
-        hide: false,
-        draggable: true
-    },
-});
-
-const obj = document.getElementById('obj')
-
 const broshureOpen = document.querySelectorAll(".broshure-open")
 const broshureClose = document.querySelectorAll('.broshure-close')
 const broshureContainer = document.getElementById('broshureContainer')
@@ -363,6 +348,22 @@ menuBtns?.forEach(el => {
         })
     })
 })
+
+
+// ============= gallery
+
+const swiper1 = new Swiper(".gallerySwiper", {
+    modules: [Scrollbar, Mousewheel, FreeMode],
+    mousewheel: false,
+    slidesPerView: 'auto',
+    freeMode: true,
+    grabCursor: true,
+    scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: false,
+        draggable: true
+    },
+});
 
 const gallery = document.querySelector('.gallery')
 const floor = document.querySelector('.floor')
