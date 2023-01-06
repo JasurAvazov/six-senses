@@ -23,6 +23,7 @@
     .popup{
         width: 100%;
         max-width: 1080px;
+        height: 100%;
         position: relative;
         border: 4px solid #2F3A49;
         animation: anim .2s ease-in-out;
@@ -48,10 +49,10 @@
                 background-color: rgba(0, 0, 0, 0.7);
             }
         }
-        .popup__con{
+        .popup__container{
             width: 100%;
             height: 100%;
-            padding: 60px;
+            padding: 40px;
             position: relative;
             top: 0;
             display: flex;
@@ -194,7 +195,7 @@
             .popup-submit{
                 width: calc(100% - 124px);
                 height: 42px;
-                background-color: rgba(0,0,0,.35);
+                background-color: transparent;
                 border: 0;
                 color: white;
                 cursor: pointer;

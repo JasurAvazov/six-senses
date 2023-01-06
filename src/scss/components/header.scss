@@ -153,8 +153,13 @@
     color: white;
     text-transform: uppercase;
     cursor: pointer;
-    @media (max-width: 992px) {
-        display: none;
+}
+
+#header{
+    .header-number{
+        @media (max-width: 992px) {
+            display: none;
+        }
     }
 }
 
@@ -527,6 +532,18 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
+            .header-number{
+                padding: 16px;
+            }
+            .mobile-nav__phone{
+                width: 42px;
+                height: 42px;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 16px;
+            }
         }
     }
 }
