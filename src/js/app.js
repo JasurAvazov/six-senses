@@ -445,30 +445,6 @@ trigger = ScrollTrigger.create({
   end: "max",
   onUpdate: updateHandler,
 });
-let tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".gallery",
-    start: "top top",
-    end: "top top",
-    markers: false,
-    onEnter: () => {
-      console.log("hello");
-      swiper1.mousewheel.enable();
-      body.style.overflowY = "hidden";
-      gallery.style.position = "fixed";
-      gallery.style.top = "0";
-      floor.style.marginTop = "100vh";
-    },
-    onEnterBack: () => {
-      console.log("bye bye");
-      swiper1.mousewheel.enable();
-      body.style.overflowY = "hidden";
-      gallery.style.position = "fixed";
-      gallery.style.top = "0";
-      floor.style.marginTop = "100vh";
-    },
-  },
-});
 
 draggable = Draggable.create(handler, {
   type: "x",

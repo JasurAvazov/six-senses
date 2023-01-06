@@ -1398,9 +1398,38 @@
   background: -o-linear-gradient(20deg, white 64%, #459A77 36%);
   background: linear-gradient(70deg, white 64%, #459A77 36%);
 }
+@media (max-width: 992px) {
+  .about-project {
+    background-image: -webkit-gradient(linear, right top, left top, from(#459A77), to(#2F6D4D));
+    background-image: -o-linear-gradient(right, #459A77 0%, #2F6D4D 100%);
+    background-image: linear-gradient(270deg, #459A77 0%, #2F6D4D 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-project::before {
+    content: "";
+    position: absolute;
+    bottom: 56px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 56px);
+    background-image: url("../img/form-form.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    -o-object-fit: cover;
+       object-fit: cover;
+    background-size: cover;
+  }
+}
+@media (max-width: 768px) {
+  .about-project {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
 
 .ap-con {
-  max-width: 1200px;
   width: 100%;
   height: 100%;
   padding-left: 20px;
@@ -1415,6 +1444,21 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .ap-con {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 575px) {
+  .ap-con {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .registration-panel {
@@ -1434,15 +1478,38 @@
       -ms-flex-direction: column;
           flex-direction: column;
   cursor: default;
+  z-index: 2;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .registration-panel {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    margin-bottom: 50px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .registration-panel h1 {
-  width: 390px;
+  max-width: 390px;
+  width: 100%;
   font-size: 32px;
   font-weight: 400;
   line-height: 37px;
   text-transform: uppercase;
   font-family: "Tenor Sans", sans-serif;
+}
+@media (max-width: 768px) {
+  .registration-panel h1 {
+    margin-bottom: 16px;
+    font-weight: 400;
+    text-align: center;
+    font-size: 21px;
+    line-height: 25px;
+  }
 }
 
 .checked-text {
@@ -1450,8 +1517,22 @@
   line-height: 13px;
   color: #2D374D;
 }
+@media (max-width: 768px) {
+  .checked-text {
+    margin-bottom: 32px;
+  }
+}
+@media (max-width: 575px) {
+  .checked-text {
+    font-weight: 400;
+    text-align: center;
+    font-size: 12px;
+    line-height: 100%;
+  }
+}
 .checked-text span {
   margin-left: 8px;
+  white-space: nowrap;
 }
 .checked-text span:first-child {
   margin-left: 0;
@@ -1468,12 +1549,34 @@
   right: 0;
   width: calc(100% - 600px);
 }
+@media (max-width: 992px) {
+  .book {
+    right: 70px;
+    z-index: 1;
+  }
+}
+@media (max-width: 768px) {
+  .book {
+    position: static;
+    width: 364.8px;
+    height: 250.4px;
+    margin-top: -20px;
+    margin-left: -60px;
+  }
+}
 .book img {
   position: absolute;
   top: 0;
   left: 0;
   rotate: 6deg;
   width: 570px;
+}
+@media (max-width: 768px) {
+  .book img {
+    position: static;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .input-text {
@@ -1618,6 +1721,21 @@
           align-items: center;
   color: rgba(0, 0, 0, 0.35);
   cursor: pointer;
+  -webkit-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  transition: 300ms ease;
+}
+.about-project-btn:hover {
+  background-color: #459A77;
+}
+.about-project-btn:hover svg {
+  fill: #fff;
+}
+.about-project-btn svg {
+  -webkit-transition: 300ms ease;
+  -o-transition: 300ms ease;
+  transition: 300ms ease;
+  fill: rgba(0, 0, 0, 0.35);
 }
 
 .menu__about-project-btn {
