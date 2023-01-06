@@ -411,31 +411,31 @@ gsap.to(sections, {
 });
 
 // = custom scrollbar ============
-const scrollBar = document.querySelector(".bar");
-const handler = document.querySelector("#handler");
-const barLength = scrollBar.offsetHeight - handler.offsetHeight;
-const scroller = document.querySelector("#scroll-slide");
-const maxScroll = ScrollTrigger.maxScroll(scroller);
-let trigger, draggable;
+// const scrollBar = document.querySelector(".bar");
+// const handler = document.querySelector("#handler");
+// const barLength = scrollBar.offsetHeight - handler.offsetHeight;
+// const scroller = document.querySelector("#scroller");
+// const maxScroll = ScrollTrigger.maxScroll(scroller);
+// let trigger, draggable;
 
-trigger = ScrollTrigger.create({
-  scroller: scroller,
-  start: 0,
-  end: "max",
-  onUpdate: updateHandler,
-});
+// trigger = ScrollTrigger.create({
+//   scroller: scroller,
+//   start: 0,
+//   end: "max",
+//   onUpdate: updateHandler,
+// });
 
-draggable = Draggable.create(handler, {
-  type: "x",
-  bounds: ".bar",
-  onDrag: function () {
-    trigger.scroll((this.y / barLength) * maxScroll);
-  },
-})[0];
+// draggable = Draggable.create(handler, {
+//   type: "x",
+//   bounds: ".bar",
+//   onDrag: function () {
+//     trigger.scroll((this.y / barLength) * maxScroll);
+//   },
+// })[0];
 
-function updateHandler() {
-  gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
-}
+// function updateHandler() {
+//   gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
+// }
 
 gsap.utils.toArray(".book-container").forEach((section) => {
   const tl = gsap.timeline({
