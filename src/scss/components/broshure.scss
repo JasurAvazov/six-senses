@@ -1,19 +1,21 @@
 .broshure-con{
     width: 100vw;
-    height: 100vh;
+    min-width: 340px;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 200;
-    transition: .4s;
+    transition: .3s;
     display: none;
+    padding: 15px;
     justify-content: center;
     align-items: center;
     .blur{
         width: 100%;
         height: 100%;
         backdrop-filter: blur(2px);
-        background-color: rgba(0, 0, 0, 0.27);
+        background-color: rgba(0, 0, 0, 0.75);
         position: absolute;
         top: 0;
         left: 0;
@@ -21,27 +23,141 @@
     }
     .popup{
         width: 100%;
-        padding: 20px;
-        max-width: 1300px;
-        background-color: red;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        gap: 100px;
-        position: absolute;
-        @media(max-width: 768px){
+        max-width: 1080px;
+        position: relative;
+        border: 4px solid #2F3A49;
+        animation: anim .2s ease-in-out;
+        overflow: hidden;
+        @media(max-width: 1000px){
             display: none;
         }
-        .brochure-text{
-            font-size: 32px;
-            line-height: 39px;
-            p{
-                color: white;
-                span{
-                    color: #459A77;
+        .popup__bg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            video{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .toning{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        }
+        .popup__container{
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+            position: relative;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            .popup__text{
+                font-size: 32px;
+                line-height: 39px;
+                p{
+                    color: white;
+                    font-weight: 300;
+                    span{
+                        color: #6489BC;
+                    }
+                }
+            }
+            .popup__panel{
+                padding: 60px;
+                background-color: #2F3A49;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .popup-close{
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    cursor: pointer;
+                    svg{
+                        width: 22px;
+                        height: 20px;
+                    }
+                }
+                .popup-panel__container{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    width: 100%;
+                    gap: 15px;
+                    .popup-panel__title{
+                        font-size: 64px;
+                        line-height: 75px;
+                        color: white;
+                        font-family: 'Tenor Sans', sans-serif;
+                        text-transform: uppercase;
+                        font-weight: 400;
+                    }
+                    label{
+                        font-size: 16px;
+                        color: white;
+                        font-weight: 400;
+                    }
+                    .popup__input{
+                        width: 100%;
+                        padding: 12px;
+                        border: 1px solid white;
+                        background-color: transparent;
+                        outline: none;
+                        caret-color: white;
+                        color: white;
+                        &::placeholder{
+                            font-size: 14px;
+                            color: white;
+                        }
+                    }
+                    .popup__lower{
+                        width: 100%;
+                        height: 42px;
+                        display: flex;
+                        justify-content: space-between;
+                        .popup__submit{
+                            width: calc(100% - 186px);
+                            height: 42px;
+                            background-color: transparent;
+                            border: 1px solid #5E7390;
+                            color: #5E7390;
+                            cursor: pointer;
+                            outline: none;
+                            &:hover{
+                                background-color: #5E7390;
+                                color: white;
+                            }
+                        }
+                        .popup__btns{
+                            width: 42px;
+                            height: 42px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: #5E7390;
+                                path{
+                                    fill: white;
+                                }
+                            }
+                            path{
+                                fill: white;
+                            }
+                        }
+                    }
                 }
             }
         }
+
     }
     .popup-mobile{
         width: calc(100% - 24px);
@@ -50,12 +166,12 @@
         padding: 20px;
         background-color: white;
         position: absolute;
-        animation: anim .4s ease-in-out;
+        animation: anim .2s ease-in-out;
         display: none;
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
             display: flex;
         }
         h2{
@@ -108,12 +224,12 @@
                 color: rgba(0, 0, 0, 0.35);
             }
         }
-        .popup-lower{
+        .popup-mobile__lower{
             width: 100%;
             height: 42px;
             display: flex;
             justify-content: space-between;
-            .popup-submit{
+            .popup-mobile__submit{
                 width: calc(100% - 124px);
                 height: 42px;
                 background-color: rgba(0,0,0,.35);
@@ -121,10 +237,10 @@
                 color: white;
                 cursor: pointer;
                 &:hover{
-                    background-color: #459A77;
+                    background-color: #5E7390;
                 }
             }
-            .popup-btns{
+            .popup-mobile__btns{
                 width: 42px;
                 height: 42px;
                 display: flex;
@@ -132,7 +248,7 @@
                 align-items: center;
                 cursor: pointer;
                 &:hover{
-                    background-color: #459A77;
+                    background-color: #5E7390;
                     path{
                         fill: white;
                     }

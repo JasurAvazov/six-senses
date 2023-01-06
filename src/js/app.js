@@ -1,15 +1,11 @@
 import * as functions from "./modules/functions.js";
-import Swiper, {
-  Autoplay,
-  EffectFade,
-  FreeMode,
-  Mousewheel,
-  Navigation,
-  Scrollbar,
-} from "swiper";
+
 // import SmoothScroll from 'smoothscroll-for-websites'
+
 import { gsap } from "gsap";
+
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
+
 import { Draggable } from "gsap/dist/Draggable.js";
 
 // SmoothScroll({
@@ -19,6 +15,25 @@ import { Draggable } from "gsap/dist/Draggable.js";
 //     arrowScroll: 100,
 //     touchpadSupport: true
 // })
+
+import Swiper, {
+  Autoplay,
+  EffectFade,
+  FreeMode,
+  Mousewheel,
+  Navigation,
+  Scrollbar,
+} from "swiper";
+
+import SmoothScroll from "smoothscroll-for-websites";
+
+SmoothScroll({
+  animationTime: 1000,
+  stepSize: 60,
+  keyboardSupport: true,
+  arrowScroll: 100,
+  touchpadSupport: true,
+});
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
@@ -194,6 +209,17 @@ const autoSwiper = new Swiper(".twrSwiper", {
   simulateTouch: true,
   autoplay: {
     delay: 2000,
+  },
+});
+
+new Swiper(".developer__swiper", {
+  slidesPerView: 1.2,
+  spaceBetween: 10,
+  breakpoints: {
+    576: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+    },
   },
 });
 
@@ -418,6 +444,30 @@ trigger = ScrollTrigger.create({
   start: 0,
   end: "max",
   onUpdate: updateHandler,
+});
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".gallery",
+    start: "top top",
+    end: "top top",
+    markers: false,
+    onEnter: () => {
+      console.log("hello");
+      swiper1.mousewheel.enable();
+      body.style.overflowY = "hidden";
+      gallery.style.position = "fixed";
+      gallery.style.top = "0";
+      floor.style.marginTop = "100vh";
+    },
+    onEnterBack: () => {
+      console.log("bye bye");
+      swiper1.mousewheel.enable();
+      body.style.overflowY = "hidden";
+      gallery.style.position = "fixed";
+      gallery.style.top = "0";
+      floor.style.marginTop = "100vh";
+    },
+  },
 });
 
 draggable = Draggable.create(handler, {
