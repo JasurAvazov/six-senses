@@ -333,12 +333,12 @@
 }
 
 .menu__contactUs-title{
-    font-size: 64px !important;
+    font-size: 64px;
     line-height: 75px;
     color: white;
     font-family: 'Tenor Sans', sans-serif;
     text-transform: uppercase;
-    font-weight: 400 !important;
+    font-weight: 400;
 }
 
 .menu__logo{
@@ -348,12 +348,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.menu__logo p{
-    color: white;
-    font-size: 21px;
-    font-weight: 300;
 }
 
 .menu__logo p span{
