@@ -1101,9 +1101,9 @@
           flex-direction: column;
   overflow: hidden;
 }
-@media (max-width: 470px) {
+@media (max-width: 575px) {
   .pp-con {
-    padding: 64px 20px 100px;
+    padding: 64px 15px;
   }
 }
 
@@ -1827,6 +1827,22 @@
   max-width: 1160px;
   width: 900px;
 }
+@media (max-width: 1200px) {
+  .twr-title img {
+    max-width: 800px;
+  }
+}
+@media (max-width: 992px) {
+  .twr-title img {
+    max-width: 600px;
+  }
+}
+@media (max-width: 768px) {
+  .twr-title img {
+    max-width: 320px;
+    width: 100%;
+  }
+}
 .twr-title h3 {
   text-align: center;
   font-size: 64px;
@@ -1834,6 +1850,22 @@
   font-family: "Tenor Sans", sans-serif;
   line-height: 75px;
   text-transform: uppercase;
+}
+@media (max-width: 1200px) {
+  .twr-title h3 {
+    font-size: 56px;
+    line-height: 120%;
+  }
+}
+@media (max-width: 992px) {
+  .twr-title h3 {
+    font-size: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .twr-title h3 {
+    font-size: 18px;
+  }
 }
 .twr-title h3 span {
   color: #459A77;
@@ -1844,10 +1876,36 @@
   width: 100%;
   height: 100vh;
 }
+@media (max-width: 1200px) {
+  .twr-slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 .twr-slider .twrSwiper {
   height: 100%;
   margin: 0;
   padding: 60px 120px;
+}
+@media (max-width: 1200px) {
+  .twr-slider .twrSwiper {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 60px 60px;
+  }
+}
+@media (max-width: 575px) {
+  .twr-slider .twrSwiper {
+    padding: 60px 15px;
+  }
 }
 .twr-slider .twrSwiper .swiper-scrollbar-drag {
   background-color: #459A77 !important;
@@ -1880,7 +1938,7 @@
 
 .map-title {
   width: 100%;
-  padding: 45px 20px 60px;
+  padding: 64px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1897,6 +1955,28 @@
   font-size: 64px;
   font-weight: 400;
   font-family: "Tenor Sans", sans-serif;
+}
+@media (max-width: 992px) {
+  .map-title p {
+    font-size: 56px;
+  }
+}
+@media (max-width: 768px) {
+  .map-title p {
+    font-size: 46px;
+  }
+}
+@media (max-width: 575px) {
+  .map-title p {
+    font-size: 32px;
+    line-height: 37px;
+  }
+}
+@media (max-width: 450px) {
+  .map-title p {
+    font-size: 24px;
+    line-height: 120%;
+  }
 }
 
 .map {
