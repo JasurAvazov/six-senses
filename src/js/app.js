@@ -60,9 +60,9 @@ gsap.utils.toArray(".places-top").forEach((section) => {
       "start"
     )
     .from(
-      section.querySelector(".box-right-side"),
+      section.querySelector(".box-right-side"), 
       {
-        x: 200,
+        x: 200, 
         opacity: 0,
         ease: "expo.ease",
       },
