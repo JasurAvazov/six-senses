@@ -166,6 +166,17 @@ const autoSwiper = new Swiper(".twrSwiper", {
     },
 });
 
+new Swiper(".developer__swiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 10,
+    breakpoints: {
+        576: {
+            slidesPerView: 3,
+            spaceBetween: 24,
+        }
+    }
+})
+
 const tabs = () => {
     if(document.querySelectorAll('.floor__tab-item')){
         const tabBtns = document.querySelectorAll('.floor__tab-item');

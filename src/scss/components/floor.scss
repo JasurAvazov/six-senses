@@ -179,6 +179,8 @@
     }
     @include media(768){
         gap: 25px;
+    }
+    @include media(575){
         align-items: flex-start;
     }
     &-label{
@@ -214,6 +216,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include media(768){
+        margin: 0;
+    }
     @include media(575){
         max-width: 230px;
         margin-left: auto !important;
@@ -234,6 +239,11 @@
     @include media(992){
         align-items: center;
         gap: 5px;
+    }
+    @include media(768){
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 100px;
     }
     @include media(575){
         max-width: 320px;
