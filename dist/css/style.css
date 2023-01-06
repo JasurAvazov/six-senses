@@ -1840,6 +1840,95 @@
   color: white;
 }
 
+.gallery {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+}
+.gallery *::-moz-selection {
+  background: transparent !important;
+  color: white !important;
+}
+.gallery *::selection {
+  background: transparent !important;
+  color: white !important;
+}
+
+.gallery .swiper {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+}
+.gallery .swiper .first {
+  padding-left: 0 !important;
+  padding-right: 200px;
+}
+.gallery .swiper .last {
+  width: 100vw !important;
+}
+.gallery .swiper .swiper-slide {
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.gallery .swiper .swiper-slide .slide-box {
+  height: 100%;
+  overflow: hidden;
+}
+.gallery .swiper .swiper-slide .slide-box img {
+  height: 100%;
+  max-height: 1080px;
+}
+.gallery .swiper .swiper-slide {
+  padding-left: 120px;
+  color: white;
+}
+.gallery .swiper .swiper-slide .text {
+  max-width: 500px;
+  width: 100%;
+  margin: 120px;
+}
+.gallery .swiper .swiper-slide .text .title {
+  font-size: 64px;
+  font-weight: 300;
+  color: white;
+  font-family: "Tenor Sans", sans-serif;
+  margin-bottom: 24px;
+}
+.gallery .swiper .swiper-slide .text .paragraph {
+  font-size: 21px;
+  font-weight: 400;
+  color: #777777;
+  line-height: 26px;
+}
+.gallery .swiper .swiper-scrollbar {
+  position: relative;
+  width: 270px;
+  left: 120px;
+  bottom: 120px;
+  background-color: rgba(217, 217, 217, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.gallery .swiper .swiper-scrollbar .swiper-scrollbar-drag {
+  max-width: 33.3px;
+  min-width: 33.3px;
+  height: 33.3px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
 .floor {
   background-color: white;
   cursor: default;
