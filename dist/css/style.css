@@ -2664,10 +2664,11 @@
   top: 0;
   left: 0;
   z-index: 200;
-  -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
   display: none;
+  padding: 15px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2680,7 +2681,7 @@
   height: 100%;
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
-  background-color: rgba(0, 0, 0, 0.27);
+  background-color: rgba(0, 0, 0, 0.75);
   position: absolute;
   top: 0;
   left: 0;
@@ -2688,9 +2689,43 @@
 }
 .broshure-con .popup {
   width: 100%;
-  padding: 20px;
-  max-width: 1300px;
-  background-color: red;
+  max-width: 1080px;
+  position: relative;
+  border: 4px solid #2F3A49;
+  -webkit-animation: anim 0.2s ease-in-out;
+          animation: anim 0.2s ease-in-out;
+}
+@media (max-width: 768px) {
+  .broshure-con .popup {
+    display: none;
+  }
+}
+.broshure-con .popup .popup__bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+.broshure-con .popup .popup__bg video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.broshure-con .popup .popup__bg .toning {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.broshure-con .popup .popup__con {
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+  position: relative;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2700,23 +2735,97 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  gap: 100px;
-  position: absolute;
 }
-@media (max-width: 768px) {
-  .broshure-con .popup {
-    display: none;
-  }
-}
-.broshure-con .popup .brochure-text {
+.broshure-con .popup .popup__con .popup__text {
   font-size: 32px;
   line-height: 39px;
 }
-.broshure-con .popup .brochure-text p {
+.broshure-con .popup .popup__con .popup__text p {
+  color: white;
+  font-weight: 300;
+}
+.broshure-con .popup .popup__con .popup__text p span {
+  color: #6489BC;
+}
+.broshure-con .popup .popup__con .popup__panel {
+  padding: 60px;
+  background-color: #2F3A49;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.broshure-con .popup .popup__con .popup__panel .popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.broshure-con .popup .popup__con .popup__panel .popup-close svg {
+  width: 22px;
+  height: 20px;
+}
+.broshure-con .popup .popup__con .popup__panel .popup-panel__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  gap: 15px;
+}
+.broshure-con .popup .popup__con .popup__panel .popup-panel__container .popup-panel__title {
+  font-size: 64px;
+  line-height: 75px;
+  color: white;
+  font-family: "Tenor Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.broshure-con .popup .popup__con .popup__panel .popup-panel__container label {
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+}
+.broshure-con .popup .popup__con .popup__panel .popup-panel__container .popup__input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid white;
+  background-color: transparent;
+  outline: none;
+  caret-color: white;
   color: white;
 }
-.broshure-con .popup .brochure-text p span {
-  color: #459A77;
+.broshure-con .popup .popup__con .popup__panel .popup-panel__container .popup__input::-webkit-input-placeholder {
+  font-size: 14px;
+  color: white;
+}
+.broshure-con .popup .popup__con .popup__panel .popup-panel__container .popup__input::-moz-placeholder {
+  font-size: 14px;
+  color: white;
+}
+.broshure-con .popup .popup__con .popup__panel .popup-panel__container .popup__input:-ms-input-placeholder {
+  font-size: 14px;
+  color: white;
+}
+.broshure-con .popup .popup__con .popup__panel .popup-panel__container .popup__input::-ms-input-placeholder {
+  font-size: 14px;
+  color: white;
+}
+.broshure-con .popup .popup__con .popup__panel .popup-panel__container .popup__input::placeholder {
+  font-size: 14px;
+  color: white;
 }
 .broshure-con .popup-mobile {
   width: calc(100% - 24px);
@@ -2725,8 +2834,8 @@
   padding: 20px;
   background-color: white;
   position: absolute;
-  -webkit-animation: anim 0.4s ease-in-out;
-          animation: anim 0.4s ease-in-out;
+  -webkit-animation: anim 0.2s ease-in-out;
+          animation: anim 0.2s ease-in-out;
   display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
