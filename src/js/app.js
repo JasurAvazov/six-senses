@@ -101,31 +101,28 @@ gsap.utils.toArray(".places-bottom").forEach((section) => {
     );
 });
 
-gsap.utils.toArray(".book-img").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top 60%",
-      end: "top 20%",
-      scrub: 2,
-      markers: false,
-    },
-  });
-  tl.add("start").fromTo(
-    section,
-    {
-      x: 100,
-      scale: 0.9,
-      ease: "expo.ease",
-    },
-    {
-      x: 0,
-      scale: 1.1,
-      opacity: 1,
-    },
-    "start"
-  );
-});
+gsap.utils.toArray(".book-img").forEach(section => {
+    const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 60%",
+                end: "top 20%",
+                scrub: 2,
+                markers: false,
+            },
+        });
+    tl
+        .add('start')
+        .fromTo(section, {
+            x: 100,
+            scale: 0.9,
+            ease: "expo.ease",
+        },{
+            x: 0,
+            scale: 1.1,
+            opacity: 1,
+        }, 'start')
+})
 
 gsap.utils.toArray(".formInput").forEach((section) => {
   const tl = gsap.timeline({
@@ -166,25 +163,6 @@ gsap.utils.toArray(".developerAnim").forEach((section) => {
       y: 80,
       opacity: 0,
       stagger: 5,
-    },
-    "start"
-  );
-});
-
-gsap.utils.toArray(".book-container").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "30% 70%",
-      end: "30% 50%",
-      scrub: 2,
-      markers: false,
-    },
-  });
-  tl.add("start").to(
-    section.querySelector(".text"),
-    {
-      scale: 1.2,
     },
     "start"
   );
@@ -458,3 +436,22 @@ draggable = Draggable.create(handler, {
 function updateHandler() {
   gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
 }
+
+gsap.utils.toArray(".book-container").forEach((section) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "30% 70%",
+      end: "30% 50%",
+      scrub: 2,
+      markers: true,
+    },
+  });
+  tl.add("start").to(
+    section.querySelector(".text"),
+    {
+      scale: 1.2,
+    },
+    "start"
+  );
+});
