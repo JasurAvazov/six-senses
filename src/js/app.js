@@ -365,6 +365,7 @@ gsap.utils.toArray(".twr-sticky").forEach((section) => {
     {
       opacity: 0,
       scale: 2,
+    //   autoAlpha: true,
     },
     "start"
   );
