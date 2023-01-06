@@ -1,6 +1,7 @@
 .broshure-con{
     width: 100vw;
-    height: 100vh;
+    min-width: 340px;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,7 +27,8 @@
         position: relative;
         border: 4px solid #2F3A49;
         animation: anim .2s ease-in-out;
-        @media(max-width: 768px){
+        overflow: hidden;
+        @media(max-width: 1000px){
             display: none;
         }
         .popup__bg{
@@ -48,10 +50,10 @@
                 background-color: rgba(0, 0, 0, 0.7);
             }
         }
-        .popup__con{
+        .popup__container{
             width: 100%;
             height: 100%;
-            padding: 60px;
+            padding: 50px;
             position: relative;
             top: 0;
             display: flex;
@@ -76,8 +78,8 @@
                 align-items: center;
                 .popup-close{
                     position: absolute;
-                    top: 20px;
-                    right: 20px;
+                    top: 15px;
+                    right: 15px;
                     cursor: pointer;
                     svg{
                         width: 22px;
@@ -116,6 +118,42 @@
                             color: white;
                         }
                     }
+                    .popup__lower{
+                        width: 100%;
+                        height: 42px;
+                        display: flex;
+                        justify-content: space-between;
+                        .popup__submit{
+                            width: calc(100% - 186px);
+                            height: 42px;
+                            background-color: transparent;
+                            border: 1px solid #5E7390;
+                            color: #5E7390;
+                            cursor: pointer;
+                            outline: none;
+                            &:hover{
+                                background-color: #5E7390;
+                                color: white;
+                            }
+                        }
+                        .popup__btns{
+                            width: 42px;
+                            height: 42px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: #5E7390;
+                                path{
+                                    fill: white;
+                                }
+                            }
+                            path{
+                                fill: white;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -133,7 +171,7 @@
         flex-direction: column;
         align-items: center;
         gap: 20px;
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
             display: flex;
         }
         h2{
@@ -186,12 +224,12 @@
                 color: rgba(0, 0, 0, 0.35);
             }
         }
-        .popup-lower{
+        .popup-mobile__lower{
             width: 100%;
             height: 42px;
             display: flex;
             justify-content: space-between;
-            .popup-submit{
+            .popup-mobile__submit{
                 width: calc(100% - 124px);
                 height: 42px;
                 background-color: rgba(0,0,0,.35);
@@ -199,10 +237,10 @@
                 color: white;
                 cursor: pointer;
                 &:hover{
-                    background-color: #459A77;
+                    background-color: #5E7390;
                 }
             }
-            .popup-btns{
+            .popup-mobile__btns{
                 width: 42px;
                 height: 42px;
                 display: flex;
@@ -210,7 +248,7 @@
                 align-items: center;
                 cursor: pointer;
                 &:hover{
-                    background-color: #459A77;
+                    background-color: #5E7390;
                     path{
                         fill: white;
                     }
