@@ -2,11 +2,12 @@
     width: 100%;
     height: 100%;
     position: relative;
-    max-height: 720px;
     overflow: hidden;
     .bg-panel {
         width: 100%;
-        height: 720px;
+        height: 100%;
+        position: absolute;
+        top: 0;
         video {
             width: 100%;
             height: 100%;
@@ -26,21 +27,73 @@
 }
 
 .panel{
-    position: absolute;
-    top: 0;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 100px 100px 0;
+    .footer-nav{
+        z-index: 1;
+        width: 100%;
+        padding: 20px 0;
+        border-top: 1px solid #ffffff;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        a{
+            font-weight: 500;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.copyright{
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    position: relative;
+    z-index: 3;
+    p{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 29px;
+        text-align: center;
+    }
+}
+
+
+
+.panel-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 60px 0;
+    @media (max-width: 992px){
+        flex-direction: column;
+        align-items: center;
+    }
+    hr{
+        @media(max-width: 992px){
+            width: 100%;
+            height: 2px;
+        }
+    }
     .left{
         width: 50%;
-        height: calc(100% - 102px);
-        border-right: 1px solid #ffffff;
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-right: 15px;
+        @media(max-width: 992px){
+            width: 100%;
+            padding-right: 0;
+            margin-bottom: 60px;
+        }
         .logo{
             width: 100%;
             max-width: 530px;
@@ -53,16 +106,28 @@
                 font-size: 24px;
                 line-height: 29px;
                 color: white;
+                @media (max-width: 400px) {
+                    font-size: 20px;
+                }
             }
             img{
                 width: 440px;
                 margin: 16px 0;
+                @media (max-width: 1200px){
+                    width: 358px;
+                }
+                @media (max-width: 400px){
+                    width: 300px;
+                }
             }
             .sub__title{
                 color: white;
                 font-size: 24px;
                 line-height: 29px;
                 margin-bottom: 24px;
+                @media (max-width: 1200px){
+                    font-size: 21px;
+                }
                 span{
                     color: #459A77;
                 }
@@ -73,22 +138,35 @@
                 line-height: 26px;
                 font-weight: 300;
                 text-align: justify;
+                @media (max-width: 1200px){
+                    font-size: 18px;
+                }
             }
         }
     }
     .right{
-        padding-left: 80px;
         width: 50%;
-        height: calc(100% - 102px);
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
+        @media(max-width: 992px){
+            width: 100%;
+            margin-top: 60px;
+            justify-content: center;
+        }
+        .menu__contactUs-title{
+            @media(max-width: 1200px){
+                font-size: 52px;
+            }
+        }
         .menu__contactUs{
             width: 440px;
-            height: 100%;
             padding: 0;
             min-height: 100%;
             background-color: transparent;
+            @media(max-width: 1200px){
+                width: 358px;
+            }
         }
         .menu__form{
             margin-top: 0;
@@ -102,36 +180,5 @@
         .menu__submit{
             width: calc(100% - 166px);
         }
-    }
-}
-
-
-
-.footer-nav{
-    margin-top: 32px;
-    width: 100%;
-    padding: 20px 0;
-    height: 70px;
-    border-top: 1px solid #ffffff;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    a{
-        font-weight: 500;
-        color: white;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-    }
-}
-
-.copyright{
-    padding: 10px;
-    background-color: white;
-    p{
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 29px;
-        text-align: center;
     }
 }
