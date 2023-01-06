@@ -396,27 +396,31 @@ menuBtns?.forEach((el) => {
 
 // ============= gallery
 
-let sections = gsap.utils.toArray(".gallery-slide");
+(function gsapMatchMedia() {
+  ScrollTrigger.matchMedia({
+    all: function () {
 
-gsap.to(sections, {
-  xPercent: -96 * (sections.length - 1),
-  ease: "power1.out",
-  scrollTrigger: {
-    trigger: ".gallery",
-    pin: true,
-    scrub: true,
-    start: "top 0%",
-    end: "+=10000",
-  },
-});
 
-// = custom scrollbar ============
-// const scrollBar = document.querySelector(".bar");
-// const handler = document.querySelector("#handler");
-// const barLength = scrollBar.offsetHeight - handler.offsetHeight;
-// const scroller = document.querySelector("#scroller");
-// const maxScroll = ScrollTrigger.maxScroll(scroller);
-// let trigger, draggable;
+    },
+    // 2500 - 1025
+    "(max-width: 2500px) and (min-width: 1025px)": function () {
+      let sections = gsap.utils.toArray(".gallery-slide");
+
+      gsap.to(sections, {
+        xPercent: -96 * (sections.length - 1),
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: ".gallery",
+          pin: true,
+          scrub: true,
+          start: "top 0%",
+          end: "+=10000",
+        },
+      });
+    },
+    // 1024 - 577
+    "(max-width: 1024px) and (min-width: 577px)": function () {
+        let sections = gsap.utils.toArray(".gallery-slide");
 
 // trigger = ScrollTrigger.create({
 //   scroller: scroller,
@@ -425,17 +429,45 @@ gsap.to(sections, {
 //   onUpdate: updateHandler,
 // });
 
-// draggable = Draggable.create(handler, {
-//   type: "x",
-//   bounds: ".bar",
-//   onDrag: function () {
-//     trigger.scroll((this.y / barLength) * maxScroll);
-//   },
-// })[0];
 
-// function updateHandler() {
-//   gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
-// }
+        gsap.to(sections, {
+          xPercent: -97.8 * (sections.length - 1),
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: ".gallery",
+            pin: true,
+            scrub: true,
+            start: "top 0%",
+            end: "+=10000",
+          },
+        });
+    },
+    // 576 - 320
+    "(max-width: 576px) and (min-width: 320px)": function () {
+        let sections = gsap.utils.toArray(".gallery-slide");
+
+
+        gsap.to(sections, {
+          xPercent: -97.8 * (sections.length - 1),
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: ".gallery",
+            pin: true,
+            scrub: true,
+            start: "top 0%",
+            end: "+=10000",
+          },
+        });
+    },
+  });
+})();
+
+function updateHandler() {
+  gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
+
+}
+
+
 
 gsap.utils.toArray(".book-container").forEach((section) => {
   const tl = gsap.timeline({
