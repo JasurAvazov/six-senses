@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20230106122046">
+    <link rel="stylesheet" href="css/style.min.css?_v=20230106122109">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20230106122046">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20230106122109">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
   </head>
   <body id="body">
@@ -804,9 +804,32 @@
             <div class="broshure-con" id="broshureContainer">
               <div class="blur broshure-close"></div>
               <div class="popup">
-                <div class="brochure-text">
-                  <p>Have a <span>questions</span>?</p>
-                  <p>We would love <br />to <span>help</span>.</p>
+                <div class="popup__bg">
+                  <video muted="" loop="" autoplay="">
+                    <source src="./files/banner-video.mp4" type="video/mp4">
+                  </video>
+                  <div class="toning"></div>
+                </div>
+                <div class="popup__con">
+                  <div class="popup__text">
+                    <p>Have a <span>questions</span>?</p>
+                    <p>We would love <br />to <span>help</span>.</p>
+                  </div>
+                  <div class="popup__panel">
+                    <div class="popup-close broshure-close"><svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M18.1213 14.9995L30.5713 2.5682C30.8105 2.27676 30.9328 1.90677 30.9143 1.53019C30.8958 1.15361 30.7379 0.797372 30.4713 0.53077C30.2047 0.264168 29.8484 0.106262 29.4718 0.0877673C29.0953 0.0692722 28.7253 0.19151 28.4338 0.430705L16.0026 12.8807L3.57133 0.430705C3.27989 0.19151 2.90989 0.0692722 2.53331 0.0877673C2.15673 0.106262 1.8005 0.264168 1.53389 0.53077C1.26729 0.797372 1.10939 1.15361 1.09089 1.53019C1.0724 1.90677 1.19463 2.27676 1.43383 2.5682L13.8838 14.9995L1.43383 27.4307C1.15216 27.7151 0.994141 28.0992 0.994141 28.4995C0.994141 28.8997 1.15216 29.2838 1.43383 29.5682C1.72054 29.8454 2.10376 30.0004 2.50258 30.0004C2.9014 30.0004 3.28462 29.8454 3.57133 29.5682L16.0026 17.1182L28.4338 29.5682C28.7205 29.8454 29.1038 30.0004 29.5026 30.0004C29.9014 30.0004 30.2846 29.8454 30.5713 29.5682C30.853 29.2838 31.011 28.8997 31.011 28.4995C31.011 28.0992 30.853 27.7151 30.5713 27.4307L18.1213 14.9995Z" fill="white"/>
+</svg>
+                    </div><img class="popup__logo" src="img/logo.svg">
+                    <div class="popup-panel__container">
+                      <p class="popup-panel__title">Contact us</p>
+                      <label for="popup-name">Full name</label>
+                      <input class="popup__input" id="popup-name" type="text" placeholder="Your name" name="name">
+                      <label for="popup-mail">E-mail address</label>
+                      <input class="popup__input" id="popup-mail" type="text" name="mail" placeholder="Your mail">
+                      <label for="popup-phone_number">Phone number</label>
+                      <input class="popup__input" id="popup-phone_number" type="tel" name="mail" placeholder="Phone number">
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="popup-mobile">
@@ -830,6 +853,6 @@
               </div>
             </div>
     </div>
-    <script src="js/app.min.js?_v=20230106122046"> </script>
+    <script src="js/app.min.js?_v=20230106122109"> </script>
   </body>
 </html>
