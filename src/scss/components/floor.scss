@@ -5,9 +5,10 @@
 }
 
 .floor__body{
-    max-width: 1200px;
-    padding: 80px 20px;
-    margin: auto;
+    padding: 80px 15px;
+    @include media(575){
+        padding: 64px 15px;
+    }
 }
 
 .floor__title {
@@ -19,6 +20,11 @@
     color: #000;
     margin-bottom: 30px;
     font-family: 'Tenor Sans', sans-serif;
+    @include media(575){
+        font-size: 32px;
+        line-height: 37px;
+        margin-bottom: 24px;
+    }
 }
 
 .floor__content {
@@ -44,15 +50,29 @@
 .floor__navigation {
     position: absolute;
     width: 620px;
-    height: 0;
     z-index: 5;
     top: 50%;
+    height: 0;
     transform: translateY(-50%);
     left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     pointer-events: none;
+    @include media(1200){
+        width: 520px;
+    }
+    @include media(992){
+        transform: translateY(0);
+        top: 250px;
+        width: 100%;
+    }
+    @include media(575){
+        top: 125px;
+        width: 310px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
 
 .floor__navigation .swiper-button-prev {
@@ -110,6 +130,10 @@
     justify-content: center;
     gap: 28px;
     margin-bottom: 64px;
+    @include media(575){
+        gap: 14px;
+        margin-bottom: 32px;
+    }
 }
 
 .floor__tab-item {
@@ -125,6 +149,12 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    @include media(575){
+        font-weight: 400;
+        font-size: 12px;
+        padding: 8px 14px;
+        line-height: 114%;
+    }
 }
 
 .floor__tab-item.active {
@@ -138,15 +168,42 @@
     justify-content: space-between;
     align-items: center;
     gap: 120px;
+    @include media(1200){
+        gap: 80px;
+    }
+    @include media(992){
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        justify-content: flex-start; 
+    }
+    @include media(768){
+        gap: 25px;
+        align-items: flex-start;
+    }
+    &-label{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 100%;
+        color: rgba(0, 0, 0, 0.6);
+        @include media(992){
+            margin-bottom: 16px;
+        }
+    }
 }
 
 .floor__item-title {
     font-weight: 500;
     font-size: 46px;
     line-height: 95.2%;
-    margin-bottom: 55px;
+    margin-bottom: 32px;
     text-transform: uppercase;
     color: #000;
+    @include media(575){
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 95.2%;
+    }
 }
 
 .floor__item-img {
@@ -157,6 +214,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include media(575){
+        max-width: 230px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin: 0;
+    }
 }
 
 .floor__item-img img {
@@ -167,8 +230,31 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-bottom: 50px;
     min-width: 330px;
+    @include media(992){
+        align-items: center;
+        gap: 5px;
+    }
+    @include media(575){
+        max-width: 320px;
+        align-items: flex-start;
+    }
+    &-row{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 32px;
+        @include media(992){
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        @include media(768){
+            margin-bottom: 20px;
+        }
+        @include media(575){
+            align-items: flex-start;
+        }
+    }
 }
 
 .floor__item-info-p {
@@ -177,10 +263,15 @@
     line-height: 100%;
     text-transform: uppercase;
     color: #000;
+    @include media(575){
+        font-size: 21px;
+        line-height: 100%;
+    }
 }
 
 .floor__item-info-p span {
     font-weight: 700;
+    margin-left: 5px;
 }
 
 .floor__item-info-btn {
@@ -205,6 +296,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #fff;
+    @include media(575){
+        width: 35px !important;
+        height: 35px !important;
+        svg{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
 }
 
 .floor__navigation .swiper-button-next, .floor__navigation .swiper-button-prev{
@@ -229,6 +329,11 @@
     gap: 10px;
     color: white;
     align-items: center;
+    @include media(992){
+        max-width: 320px;
+        width: 100%;    
+        height: 42px;
+    }
 }
 
 .floor__item-btn path{
