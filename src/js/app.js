@@ -4,6 +4,7 @@ import Swiper, {Autoplay, EffectFade, FreeMode, Mousewheel, Navigation, Scrollba
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js"
 
+
 // SmoothScroll({
 //     animationTime: 1000,
 //     stepSize: 60,
@@ -447,3 +448,106 @@ swiper1.on('reachBeginning', function(){
     floor.style.marginTop = '0'
     body.style.overflowY = 'auto'
 });
+
+
+
+
+
+
+// ============================================================================
+
+// const scrollbar = document.querySelector("#scrollbar");
+//
+// class HorizontalScrollPlugin extends Scrollbar.ScrollbarPlugin {
+//     static pluginName = "horizontalScroll";
+//
+//     transformDelta(delta, fromEvent) {
+//         if (!/wheel/.test(fromEvent.type)) {
+//             return delta;
+//         }
+//
+//         const { x, y } = delta;
+//
+//         return {
+//             y: 0,
+//             x: Math.abs(x) > Math.abs(y) ? x : y
+//         };
+//     }
+// }
+//
+// Scrollbar.use(HorizontalScrollPlugin, OverscrollPlugin);
+// const myHorizontalScrollbar = Scrollbar.init(scrollbar, {
+//     damping: 0.1,
+//     alwaysShowTracks: true
+// });
+//
+// myHorizontalScrollbar.setPosition(0, 0);
+//
+// ScrollTrigger.scrollerProxy(scrollbar, {
+//     scrollLeft(value) {
+//         if (arguments.length) {
+//             myHorizontalScrollbar.scrollLeft = value;
+//         }
+//         return myHorizontalScrollbar.scrollLeft;
+//     },
+//     getBoundingClientRect() {
+//         return {
+//             top: 0,
+//             left: 0,
+//             width: window.innerWidth,
+//             height: window.innerHeight
+//         };
+//     }
+// });
+//
+// myHorizontalScrollbar.addListener(ScrollTrigger.update);
+//
+// const buttons = document.querySelectorAll("button");
+//
+// buttons.forEach((btn, index) => {
+//
+//     gsap.to(btn, {
+//         scrollTrigger: {
+//             id: `btn--round-${index}`,
+//             trigger: btn,
+//             toggleClass: "enable",
+//             markers: true,
+//             horizontal: true,
+//             scroller: scrollbar,
+//             refreshPriority: -1,
+//             start: "0 80%",
+//             end: "0 20%"
+//         }
+//     });
+//
+//
+//
+//     let proxy = { skew: 0 },
+//         skewSetter = gsap.quickSetter(btn, "skewX", "deg"), // fast
+//         clamp = gsap.utils.clamp(-45, 45); // don't let the skew go beyond those degrees.
+//
+//     ScrollTrigger.create({
+//
+//         trigger: btn,
+//         horizontal: true,
+//         scroller: scrollbar,
+//         start: "0 100%",
+//         end: "100% 0",
+//
+//         onUpdate: (self) => {
+//             let skew = clamp(self.getVelocity() / -50);
+//             if (Math.abs(skew) > Math.abs(proxy.skew)) {
+//                 proxy.skew = skew;
+//                 gsap.to(proxy, {
+//                     skew: 0,
+//                     duration: 0.8,
+//                     ease: "power3",
+//                     overwrite: true,
+//                     onUpdate: () => skewSetter(proxy.skew)
+//                 });
+//             }
+//         }
+//     });
+//
+//
+// });
