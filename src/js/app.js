@@ -1,6 +1,6 @@
 import * as functions from "./modules/functions.js";
 
-// import SmoothScroll from 'smoothscroll-for-websites'
+import SmoothScroll from 'smoothscroll-for-websites'
 
 import { gsap } from "gsap";
 
@@ -8,32 +8,22 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
 
 import { Draggable } from "gsap/dist/Draggable.js";
 
-// SmoothScroll({
-//     animationTime: 1000,
-//     stepSize: 60,
-//     keyboardSupport: true,
-//     arrowScroll: 100,
-//     touchpadSupport: true
-// })
+SmoothScroll({
+    animationTime: 1000,
+    stepSize: 60,
+    keyboardSupport: true,
+    arrowScroll: 100,
+    touchpadSupport: true
+})
 
 import Swiper, {
   Autoplay,
   EffectFade,
   FreeMode,
   Mousewheel,
-  Navigation,
+  Navigation, Pagination,
   Scrollbar,
 } from "swiper";
-
-import SmoothScroll from "smoothscroll-for-websites";
-
-SmoothScroll({
-  animationTime: 1000,
-  stepSize: 60,
-  keyboardSupport: true,
-  arrowScroll: 100,
-  touchpadSupport: true,
-});
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
@@ -179,12 +169,13 @@ const swiper = new Swiper(".mySwiper", {
 });
 
 const autoSwiper = new Swiper(".twrSwiper", {
-  modules: [Scrollbar, Autoplay],
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
+  modules: [Autoplay, Pagination],
   spaceBetween: 0,
   simulateTouch: true,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
   autoplay: {
     delay: 2000,
   },
@@ -327,7 +318,6 @@ broshureClose?.forEach((el) => {
   });
 });
 
-const towersHeight = document.querySelector(".twr-sticky").clientHeight / 2;
 gsap.utils.toArray(".twr-sticky").forEach((section) => {
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -350,38 +340,6 @@ gsap.utils.toArray(".twr-sticky").forEach((section) => {
 });
 
 const bookHeight = document.querySelector(".twr-title").clientHeight / 2;
-
-gsap.utils.toArray(".book-sticky").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top top",
-      end: "150% top",
-      scrub: true,
-      markers: false,
-    },
-  });
-  tl.add("start")
-    .to(
-      section.querySelector(".sticky-bg"),
-      {
-        opacity: 0,
-        scale: 2,
-        duration: 0.4,
-      },
-      "start"
-    )
-    .fromTo(
-      section.querySelector(".text"),
-      {
-        y: bookHeight * 5,
-      },
-      {
-        y: -bookHeight + 30,
-      },
-      "start"
-    );
-});
 
 const menuBtns = document.querySelectorAll(".menu-con__btn");
 menuBtns?.forEach((el) => {
@@ -434,10 +392,7 @@ draggable = Draggable.create(handler, {
 })[0];
 
 function updateHandler() {
-  gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
-<<<<<<< HEAD
-}
-=======
+  gsap.set(handler, {y: (barLength * trigger.scroll()) / maxScroll});
 }
 
 gsap.utils.toArray(".book-container").forEach((section) => {
@@ -459,11 +414,44 @@ gsap.utils.toArray(".book-container").forEach((section) => {
   );
 });
 
+gsap.utils.toArray(".book-sticky").forEach((section) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: "150% top",
+      scrub: true,
+      markers: false,
+    },
+  });
+  tl.add("start")
+      .to(
+          section.querySelector(".sticky-bg"),
+          {
+            opacity: 0,
+            scale: 2,
+            duration: 0.4,
+          },
+          "start"
+      )
+      .fromTo(
+          section.querySelector(".text"),
+          {
+            y: bookHeight * 5,
+          },
+          {
+            y: -bookHeight + 30,
+          },
+          "start"
+      );
+});
+
 function format_number(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 const n = document.querySelectorAll('.numbers');
+
 n.forEach(el => {
   let value = { val: parseInt(el.getAttribute('data-number')), };
   const tl = gsap.timeline({
@@ -484,4 +472,3 @@ n.forEach(el => {
     },
   });
 })
->>>>>>> refs/remotes/origin/main

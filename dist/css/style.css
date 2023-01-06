@@ -1910,15 +1910,19 @@
 .twr-slider .twrSwiper .swiper-scrollbar-drag {
   background-color: #459A77 !important;
 }
-.twr-slider .twrSwiper .swiper-scrollbar {
-  max-width: 70%;
-  width: 100% !important;
-  left: 50% !important;
+.twr-slider .twrSwiper .swiper-pagination {
+  width: 70%;
+  height: 5px;
+  bottom: 30px !important;
+  top: auto;
+  left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: 30px !important;
-  background-color: #D9D9D9 !important;
+  background-color: #D9D9D9;
+}
+.twr-slider .twrSwiper .swiper-pagination .swiper-pagination-progressbar-fill {
+  background-color: #5E7390;
 }
 
 .twr-wrapper .swiper-slide img {

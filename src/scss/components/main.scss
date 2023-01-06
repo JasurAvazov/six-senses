@@ -791,13 +791,17 @@
         .swiper-scrollbar-drag{
             background-color: #459A77 !important;
         }
-        .swiper-scrollbar{
-            max-width: 70%;
-            width: 100% !important;
-            left: 50% !important;
-            transform: translateX(-50%);
+        .swiper-pagination{
+            width: 70%;
+            height: 5px;
             bottom: 30px !important;
-            background-color: #D9D9D9 !important;
+            top: auto;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #D9D9D9;
+            .swiper-pagination-progressbar-fill{
+                background-color: #5E7390;
+            }
         }
     }
 }
