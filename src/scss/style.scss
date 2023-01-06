@@ -31,6 +31,15 @@
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     caret-color: transparent;
+    &::after,
+    &::before{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    &:active{
+        outline: none;
+    }
 }
 
 *::selection{

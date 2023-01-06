@@ -2871,6 +2871,15 @@
   -webkit-tap-highlight-color: transparent;
   caret-color: transparent;
 }
+*::after, *::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+*:active {
+  outline: none;
+}
 
 *::-moz-selection {
   background: #459A77;
