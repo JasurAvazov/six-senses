@@ -491,6 +491,10 @@
         flex-direction: column;
         padding-bottom: 50px;
     }
+    @include media(575){
+        padding-left: 15px; 
+        padding-right: 15px;
+    }
 }
 
 .registration-panel{
@@ -537,11 +541,13 @@
     }
     @include media(575){
         font-weight: 400;
+        text-align: center;
         font-size: 12px;
         line-height: 100%;
     }
     span{
         margin-left: 8px;
+        white-space: nowrap;
         &:first-child{
             margin-left: 0;
         }
@@ -652,6 +658,17 @@
     align-items: center;
     color: rgba(0, 0, 0, 0.35);
     cursor: pointer;
+    transition: 300ms ease;
+    &:hover{
+        background-color: #459A77;
+        svg{
+            fill: #fff;
+        }
+    }
+    svg{
+        transition: 300ms ease;
+        fill: rgba(#000, .35);
+    }
 }
 
 .menu__about-project-btn{
