@@ -1,9 +1,8 @@
 import * as functions from "./modules/functions.js";
 import Swiper, {Autoplay, EffectFade, FreeMode, Mousewheel, Navigation, Scrollbar} from "swiper";
-// import SmoothScroll from 'smoothscroll-for-websites'
+import SmoothScroll from 'smoothscroll-for-websites'
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js"
-
 
 SmoothScroll({
     animationTime: 1000,
