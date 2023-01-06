@@ -189,8 +189,6 @@ const tabs = () => {
 }
 tabs()
 
-
-
 const maps = () => {
     if(document.querySelectorAll('.map-btn')){
         const mapBtns = document.querySelectorAll('.map-btn');
@@ -293,39 +291,6 @@ const swiper1 = new Swiper(".gallerySwiper", {
 });
 
 const obj = document.getElementById('obj')
-//
-// function animateFrom(elem) {
-//     console.log(elem)
-//     if (elem) {
-//         elem.innerHTML = "55"
-//     }
-// }
-// document.addEventListener("DOMContentLoaded", function () {
-//     gsap.registerPlugin(ScrollTrigger);
-//
-//     gsap.utils.toArray(".numbers").forEach(function (elem) {
-//
-//         ScrollTrigger.create({
-//             start: "top 20%",
-//             trigger: elem,
-//             markers: true,
-//             onEnter: animateFrom(elem)
-//         });
-//     });
-// });
-
-
-// ScrollTrigger.addEventListener("scrollEnd", () => {
-//     let top = window.scrollY
-//     if (top === 0 && header.classList.contains('hide')){
-//         header.classList.remove('hide')
-//     }
-//     if (top > 300){
-//         setTimeout(() => {
-//             header.classList.add('hide')
-//         }, 2000)
-//     }
-// });
 
 const broshureOpen = document.querySelectorAll(".broshure-open")
 const broshureClose = document.querySelectorAll('.broshure-close')
@@ -342,11 +307,6 @@ broshureClose?.forEach(el => {
         broshureContainer.classList.remove('opening')
     })
 })
-
-
-
-
-
 
 const towersHeight = document.querySelector('.twr-sticky').clientHeight / 2
 gsap.utils.toArray(".twr-sticky").forEach(section => {
@@ -393,7 +353,6 @@ gsap.utils.toArray(".book-sticky").forEach(section => {
         }, 'start')
 })
 
-
 const menuBtns = document.querySelectorAll('.menu-con__btn')
 menuBtns?.forEach(el => {
     el.addEventListener('click', () => {
@@ -405,153 +364,46 @@ menuBtns?.forEach(el => {
     })
 })
 
+const gallery = document.querySelector('.gallery')
+const floor = document.querySelector('.floor')
 
+let tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.gallery',
+        start: 'top top',
+        end: 'top top',
+        markers: false,
+        onEnter: () => {
+            console.log('hello')
+            swiper1.mousewheel.enable()
+            body.style.overflowY = 'hidden'
+            gallery.style.position = 'fixed'
+            gallery.style.top = '0'
+            floor.style.marginTop = '100vh'
+            // document.querySelector('.gallery').style.backgroundColor = 'red'
+        },
+        onEnterBack: () => {
+            console.log('bye bye')
+            swiper1.mousewheel.enable()
+            body.style.overflowY = 'hidden'
+            gallery.style.position = 'fixed'
+            gallery.style.top = '0'
+            floor.style.marginTop = '100vh'
+            // document.querySelector('.gallery').style.backgroundColor = 'green'
+        }
+    }
+});
 
-// ==============================================
+swiper1.on('reachEnd', function(){
+    swiper1.mousewheel.disable()
+    gallery.style.position = 'relative'
+    floor.style.marginTop = '0'
+    body.style.overflowY = 'auto'
+});
 
-// const gallery = document.querySelector('.gallery')
-// const floor = document.querySelector('.floor')
-//
-// let tl = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: '.gallery',
-//         start: 'top top',
-//         end: 'top top',
-//         markers: false,
-//         onEnter: () => {
-//             console.log('hello')
-//             swiper1.mousewheel.enable()
-//             body.style.overflowY = 'hidden'
-//             gallery.style.position = 'fixed'
-//             gallery.style.top = '0'
-//             floor.style.marginTop = '100vh'
-//             // document.querySelector('.gallery').style.backgroundColor = 'red'
-//         },
-//         onEnterBack: () => {
-//             console.log('bye bye')
-//             swiper1.mousewheel.enable()
-//             body.style.overflowY = 'hidden'
-//             gallery.style.position = 'fixed'
-//             gallery.style.top = '0'
-//             floor.style.marginTop = '100vh'
-//             // document.querySelector('.gallery').style.backgroundColor = 'green'
-//         }
-//     }
-// });
-
-// swiper1.on('reachEnd', function(){
-//     swiper1.mousewheel.disable()
-//     gallery.style.position = 'relative'
-//     floor.style.marginTop = '0'
-//     body.style.overflowY = 'auto'
-// });
-//
-// swiper1.on('reachBeginning', function(){
-//     swiper1.mousewheel.disable()
-//     gallery.style.position = 'relative'
-//     floor.style.marginTop = '0'
-//     body.style.overflowY = 'auto'
-// });
-
-
-
-
-
-
-// ============================================================================
-
-// const scrollbar = document.querySelector("#scrollbar");
-//
-// class HorizontalScrollPlugin extends Scrollbar.ScrollbarPlugin {
-//     static pluginName = "horizontalScroll";
-//
-//     transformDelta(delta, fromEvent) {
-//         if (!/wheel/.test(fromEvent.type)) {
-//             return delta;
-//         }
-//
-//         const { x, y } = delta;
-//
-//         return {
-//             y: 0,
-//             x: Math.abs(x) > Math.abs(y) ? x : y
-//         };
-//     }
-// }
-//
-// Scrollbar.use(HorizontalScrollPlugin, OverscrollPlugin);
-// const myHorizontalScrollbar = Scrollbar.init(scrollbar, {
-//     damping: 0.1,
-//     alwaysShowTracks: true
-// });
-//
-// myHorizontalScrollbar.setPosition(0, 0);
-//
-// ScrollTrigger.scrollerProxy(scrollbar, {
-//     scrollLeft(value) {
-//         if (arguments.length) {
-//             myHorizontalScrollbar.scrollLeft = value;
-//         }
-//         return myHorizontalScrollbar.scrollLeft;
-//     },
-//     getBoundingClientRect() {
-//         return {
-//             top: 0,
-//             left: 0,
-//             width: window.innerWidth,
-//             height: window.innerHeight
-//         };
-//     }
-// });
-//
-// myHorizontalScrollbar.addListener(ScrollTrigger.update);
-//
-// const buttons = document.querySelectorAll("button");
-//
-// buttons.forEach((btn, index) => {
-//
-//     gsap.to(btn, {
-//         scrollTrigger: {
-//             id: `btn--round-${index}`,
-//             trigger: btn,
-//             toggleClass: "enable",
-//             markers: true,
-//             horizontal: true,
-//             scroller: scrollbar,
-//             refreshPriority: -1,
-//             start: "0 80%",
-//             end: "0 20%"
-//         }
-//     });
-//
-//
-//
-//     let proxy = { skew: 0 },
-//         skewSetter = gsap.quickSetter(btn, "skewX", "deg"), // fast
-//         clamp = gsap.utils.clamp(-45, 45); // don't let the skew go beyond those degrees.
-//
-//     ScrollTrigger.create({
-//
-//         trigger: btn,
-//         horizontal: true,
-//         scroller: scrollbar,
-//         start: "0 100%",
-//         end: "100% 0",
-//
-//         onUpdate: (self) => {
-//             let skew = clamp(self.getVelocity() / -50);
-//             if (Math.abs(skew) > Math.abs(proxy.skew)) {
-//                 proxy.skew = skew;
-//                 gsap.to(proxy, {
-//                     skew: 0,
-//                     duration: 0.8,
-//                     ease: "power3",
-//                     overwrite: true,
-//                     onUpdate: () => skewSetter(proxy.skew)
-//                 });
-//             }
-//         }
-//     });
-//
-//
-// });
+swiper1.on('reachBeginning', function(){
+    swiper1.mousewheel.disable()
+    gallery.style.position = 'relative'
+    floor.style.marginTop = '0'
+    body.style.overflowY = 'auto'
+});
