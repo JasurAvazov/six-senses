@@ -5,6 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
 
+
+@import 'node_modules/@fancyapps/ui/dist/fancybox';
+
+
 // abstracts
 @import 
     'abstracts/variables',
@@ -22,6 +26,8 @@
     'components/payment',
     'components/footer',
     'components/broshure';
+
+
 
 *{
     padding: 0;

@@ -1,6 +1,6 @@
 import * as functions from "./modules/functions.js";
 
-import SmoothScroll from 'smoothscroll-for-websites'
+// import SmoothScroll from 'smoothscroll-for-websites'
 
 import { gsap } from "gsap";
 
@@ -8,22 +8,32 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger.js";
 
 import { Draggable } from "gsap/dist/Draggable.js";
 
-SmoothScroll({
-    animationTime: 1000,
-    stepSize: 60,
-    keyboardSupport: true,
-    arrowScroll: 100,
-    touchpadSupport: true
-})
+// SmoothScroll({
+//     animationTime: 1000,
+//     stepSize: 60,
+//     keyboardSupport: true,
+//     arrowScroll: 100,
+//     touchpadSupport: true
+// })
 
 import Swiper, {
   Autoplay,
   EffectFade,
   FreeMode,
   Mousewheel,
-  Navigation, Pagination,
+  Navigation,
   Scrollbar,
 } from "swiper";
+
+import SmoothScroll from "smoothscroll-for-websites";
+
+SmoothScroll({
+  animationTime: 1000,
+  stepSize: 60,
+  keyboardSupport: true,
+  arrowScroll: 100,
+  touchpadSupport: true,
+});
 
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
@@ -169,13 +179,12 @@ const swiper = new Swiper(".mySwiper", {
 });
 
 const autoSwiper = new Swiper(".twrSwiper", {
-  modules: [Autoplay, Pagination],
+  modules: [Scrollbar, Autoplay],
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
   spaceBetween: 0,
   simulateTouch: true,
-  pagination: {
-    el: ".swiper-pagination",
-    type: "progressbar",
-  },
   autoplay: {
     delay: 2000,
   },
@@ -280,7 +289,6 @@ let menuOpened = false;
 const menu_btn = document.querySelector(".menu-nav__menu");
 const menu_btn_back = document.querySelectorAll(".menu-close");
 const menu = document.getElementById("menu");
-const menuLinks = document.querySelectorAll(".menu-con__btn");
 
 menu_btn.addEventListener("click", () => {
   menu.classList.add("menuOpened");
@@ -294,14 +302,6 @@ menu_btn_back.forEach((el) => {
     body.style.overflowY = "scroll";
   });
 });
-
-menuLinks.forEach(el => {
-  el.addEventListener('click', () => {
-    menu.classList.remove("menuOpened");
-    body.style.overflowY = "scroll";
-  })
-})
-
 
 const numberClass = document.querySelectorAll(".show-number");
 numberClass?.forEach((el) => {
@@ -327,6 +327,7 @@ broshureClose?.forEach((el) => {
   });
 });
 
+const towersHeight = document.querySelector(".twr-sticky").clientHeight / 2;
 gsap.utils.toArray(".twr-sticky").forEach((section) => {
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -350,6 +351,38 @@ gsap.utils.toArray(".twr-sticky").forEach((section) => {
 
 const bookHeight = document.querySelector(".twr-title").clientHeight / 2;
 
+gsap.utils.toArray(".book-sticky").forEach((section) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: "150% top",
+      scrub: true,
+      markers: false,
+    },
+  });
+  tl.add("start")
+    .to(
+      section.querySelector(".sticky-bg"),
+      {
+        opacity: 0,
+        scale: 2,
+        duration: 0.4,
+      },
+      "start"
+    )
+    .fromTo(
+      section.querySelector(".text"),
+      {
+        y: bookHeight * 5,
+      },
+      {
+        y: -bookHeight + 30,
+      },
+      "start"
+    );
+});
+
 const menuBtns = document.querySelectorAll(".menu-con__btn");
 menuBtns?.forEach((el) => {
   el.addEventListener("click", () => {
@@ -366,8 +399,57 @@ menuBtns?.forEach((el) => {
 (function gsapMatchMedia() {
   ScrollTrigger.matchMedia({
     all: function () {
+      // = custom scrollbar ============
+      const scrollBar = document.querySelector(".bar");
+      const handler = document.querySelector("#handler");
+      const barLength = scrollBar.offsetHeight - handler.offsetHeight;
+      const scroller = document.querySelector("#scroll-slide");
+      const maxScroll = ScrollTrigger.maxScroll(scroller);
+      let trigger, draggable;
+
+      trigger = ScrollTrigger.create({
+        scroller: scroller,
+        start: 0,
+        end: "max",
+        onUpdate: updateHandler,
+      });
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".gallery",
+          start: "top top",
+          end: "top top",
+          markers: false,
+          onEnter: () => {
+            console.log("hello");
+            swiper1.mousewheel.enable();
+            body.style.overflowY = "hidden";
+            gallery.style.position = "fixed";
+            gallery.style.top = "0";
+            floor.style.marginTop = "100vh";
+          },
+          onEnterBack: () => {
+            console.log("bye bye");
+            swiper1.mousewheel.enable();
+            body.style.overflowY = "hidden";
+            gallery.style.position = "fixed";
+            gallery.style.top = "0";
+            floor.style.marginTop = "100vh";
+          },
+        },
+      });
+
+      draggable = Draggable.create(handler, {
+        type: "x",
+        bounds: ".bar",
+        onDrag: function () {
+          trigger.scroll((this.y / barLength) * maxScroll);
+        },
+      })[0];
 
 
+      function updateHandler() {
+        gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
+      }
     },
     // 2500 - 1025
     "(max-width: 2500px) and (min-width: 1025px)": function () {
@@ -389,12 +471,12 @@ menuBtns?.forEach((el) => {
     "(max-width: 1024px) and (min-width: 577px)": function () {
         let sections = gsap.utils.toArray(".gallery-slide");
 
-// trigger = ScrollTrigger.create({
-//   scroller: scroller,
-//   start: 0,
-//   end: "max",
-//   onUpdate: updateHandler,
-// });
+trigger = ScrollTrigger.create({
+  scroller: scroller,
+  start: 0,
+  end: "max",
+  onUpdate: updateHandler,
+});
 
 
         gsap.to(sections, {
@@ -412,6 +494,8 @@ menuBtns?.forEach((el) => {
     // 576 - 320
     "(max-width: 576px) and (min-width: 320px)": function () {
         let sections = gsap.utils.toArray(".gallery-slide");
+
+
         gsap.to(sections, {
           xPercent: -97.8 * (sections.length - 1),
           ease: "power1.out",
@@ -427,12 +511,37 @@ menuBtns?.forEach((el) => {
   });
 })();
 
+function updateHandler() {
+  gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
+
+}
+
+
+
+gsap.utils.toArray(".book-container").forEach((section) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "30% 70%",
+      end: "30% 50%",
+      scrub: 2,
+      markers: false,
+    },
+  });
+  tl.add("start").to(
+    section.querySelector(".text"),
+    {
+      scale: 1.2,
+    },
+    "start"
+  );
+});
+
 function format_number(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 const n = document.querySelectorAll('.numbers');
-
 n.forEach(el => {
   let value = { val: parseInt(el.getAttribute('data-number')), };
   const tl = gsap.timeline({
@@ -453,54 +562,3 @@ n.forEach(el => {
     },
   });
 })
-
-gsap.utils.toArray(".book-container").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "30% 70%",
-      end: "30% 50%",
-      scrub: 2,
-      markers: false,
-    },
-  });
-  tl.add("start").to(
-      section.querySelector(".text"),
-      {
-        scale: 1.2,
-      },
-      "start"
-  );
-});
-
-gsap.utils.toArray(".book-sticky").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top top",
-      end: "150% top",
-      scrub: true,
-      markers: false,
-    },
-  });
-  tl.add("start")
-      .to(
-          section.querySelector(".sticky-bg"),
-          {
-            opacity: 0,
-            scale: 2,
-            duration: 0.4,
-          },
-          "start"
-      )
-      .fromTo(
-          section.querySelector(".text"),
-          {
-            y: bookHeight * 5,
-          },
-          {
-            y: -bookHeight + 60,
-          },
-          "start"
-      );
-});
