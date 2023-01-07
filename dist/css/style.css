@@ -522,6 +522,9 @@
           align-items: center;
 }
 
+.menu__logo p {
+  color: white;
+}
 .menu__logo p span {
   color: #459A77;
 }
@@ -1800,13 +1803,11 @@
 }
 
 .twr-title {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  padding: 20px;
-  background-color: white;
   z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1824,8 +1825,8 @@
   gap: 20px;
 }
 .twr-title img {
-  max-width: 1160px;
-  width: 900px;
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 1200px) {
   .twr-title img {
@@ -1843,36 +1844,9 @@
     width: 100%;
   }
 }
-.twr-title h3 {
-  text-align: center;
-  font-size: 64px;
-  font-weight: 400;
-  font-family: "Tenor Sans", sans-serif;
-  line-height: 75px;
-  text-transform: uppercase;
-}
-@media (max-width: 1200px) {
-  .twr-title h3 {
-    font-size: 56px;
-    line-height: 120%;
-  }
-}
-@media (max-width: 992px) {
-  .twr-title h3 {
-    font-size: 50px;
-  }
-}
-@media (max-width: 768px) {
-  .twr-title h3 {
-    font-size: 18px;
-  }
-}
-.twr-title h3 span {
-  color: #459A77;
-  font-family: "Tenor Sans", sans-serif;
-}
 
 .twr-slider {
+  position: absolute;
   width: 100%;
   height: 100vh;
 }
@@ -2978,15 +2952,15 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .book-container .book-sticky .sticky-bg {
   position: absolute;
   top: 0;
-  background-color: black;
   width: 100%;
   height: 100%;
   z-index: 3;
+  overflow: hidden;
 }
 .book-container .book-sticky .text {
   text-align: center;

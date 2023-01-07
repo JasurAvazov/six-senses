@@ -718,13 +718,11 @@
 }
 
 .twr-title{
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    padding: 20px;
-    background-color: white;
     z-index: 5;
     display: flex;
     flex-direction: column;
@@ -732,8 +730,8 @@
     justify-content: center;
     gap: 20px;
     img{
-        max-width: 1160px;
-        width: 900px;
+        width: 100%;
+        height: 100%;
         @include media(1200){
             max-width: 800px;
         }
@@ -745,31 +743,10 @@
             width: 100%;
         }
     }
-    h3{
-        text-align: center;
-        font-size: 64px;
-        font-weight: 400;
-        font-family: 'Tenor Sans', sans-serif;
-        line-height: 75px;
-        text-transform: uppercase;
-        @include media(1200){
-            font-size: 56px;
-            line-height: 120%;
-        }
-        @include media(992){
-            font-size: 50px;
-        }
-        @include media(768){
-            font-size: 18px;
-        }
-        span{
-            color: #459A77;
-            font-family: 'Tenor Sans', sans-serif;
-        }
-    }
 }
 
 .twr-slider{
+    position: absolute;
     width: 100%;
     height: 100vh;
     @include media(1200){
