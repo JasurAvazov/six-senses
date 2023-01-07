@@ -267,6 +267,7 @@ new Swiper(".floor__swiper", {
 
 let scrollBefore = 0;
 const header = document.getElementById("header");
+
 window.addEventListener("scroll", (e) => {
   const scrolled = window.scrollY;
   if (scrolled > 300) {
@@ -438,24 +439,7 @@ gsap.utils.toArray(".book-sticky").forEach((section) => {
   });
 })();
 
-gsap.utils.toArray(".book-container").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "30% 70%",
-      end: "30% 50%",
-      scrub: 2,
-      markers: false,
-    },
-  });
-  tl.add("start").to(
-    section.querySelector(".text"),
-    {
-      scale: 1.2,
-    },
-    "start"
-  );
-});
+
 
 function format_number(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -464,7 +448,7 @@ function format_number(x) {
 const n = document.querySelectorAll('.numbers');
 n.forEach(el => {
   let value = { val: parseInt(el.getAttribute('data-number')), };
-  const tl = gsap.timeline({
+  const tl = gsap.timeline({ 
     scrollTrigger: {
       trigger: el,
       start: "0% 90%",
@@ -482,3 +466,23 @@ n.forEach(el => {
     },
   });
 })
+
+
+gsap.utils.toArray(".book-container").forEach((section) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "30% 70%",
+      end: "30% 50%",
+      scrub: 2,
+      markers: false,
+    },
+  });
+  tl.add("start").to(
+      section.querySelector(".text"),
+      {
+        scale: 1.2,
+      },
+      "start"
+  );
+});

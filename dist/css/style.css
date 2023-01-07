@@ -3335,6 +3335,16 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   height: 100%;
   z-index: 3;
   overflow: hidden;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, black), color-stop(80%, rgba(0, 0, 0, 0)), color-stop(10%, black));
+  background: -o-linear-gradient(bottom, black 10%, rgba(0, 0, 0, 0) 80%, black 10%);
+  background: linear-gradient(0deg, black 10%, rgba(0, 0, 0, 0) 80%, black 10%);
+}
+
+.book-container .book-sticky .sticky-bg img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .book-container .book-sticky .text {
@@ -4139,11 +4149,6 @@ body {
 
 .clear {
   clear: both;
-}
-
-@font-face {
-  font-family: gilroy;
-  src: url("../fonts/Gilroy-Regular.ttf");
 }
 
 @media (min-width: 576px) {
