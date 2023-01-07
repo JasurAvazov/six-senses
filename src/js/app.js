@@ -284,22 +284,21 @@ window.addEventListener("scroll", (e) => {
   }
 });
 
-let menuOpened = false;
-
 const menu_btn = document.querySelector(".menu-nav__menu");
 const menu_btn_back = document.querySelectorAll(".menu-close");
 const menu = document.getElementById("menu");
 
 menu_btn.addEventListener("click", () => {
+  console.log('idiot opened');
   menu.classList.add("menuOpened");
-  body.style.overflowY = "hidden";
-  menuOpened = true;
+  body.style.overflowY = "hidden"
 });
 
-menu_btn_back.forEach((el) => {
+menu_btn_back.forEach(el => {
   el.addEventListener("click", () => {
+    console.log("idiot closed");
     menu.classList.remove("menuOpened");
-    body.style.overflowY = "scroll";
+    body.style.overflowY = "auto"
   });
 });
 
@@ -381,17 +380,6 @@ gsap.utils.toArray(".book-sticky").forEach((section) => {
       },
       "start"
     );
-});
-
-const menuBtns = document.querySelectorAll(".menu-con__btn");
-menuBtns?.forEach((el) => {
-  el.addEventListener("click", () => {
-    menuBtns?.forEach((all) => {
-      all.classList.remove("active");
-      body.style.overflowY = "hidden";
-      el.classList.add("active");
-    });
-  });
 });
 
 // ============= gallery
