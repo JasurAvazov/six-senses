@@ -1462,9 +1462,10 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  pointer-events: none;
 }
 
 .menu__contactUs {
@@ -1510,6 +1511,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
           align-items: center;
 }
 
+.menu__logo p {
+  color: white;
+}
 .menu__logo p span {
   color: #459A77;
 }
@@ -1742,7 +1746,6 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .menu-mobile .menu-mobile__content {
   width: 100%;
   min-height: 100vh;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2556,13 +2559,11 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 
 .twr-title {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  padding: 20px;
-  background-color: white;
   z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2581,6 +2582,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 }
 
 .twr-title img {
+<<<<<<< HEAD
   max-width: 1160px;
   width: 900px;
 }
@@ -2597,9 +2599,20 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .twr-title h3 span {
   color: #459A77;
   font-family: "Tenor Sans", sans-serif;
+=======
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+}
+@media (max-width: 768px) {
+  .twr-title img {
+    width: 100%;
+  }
+>>>>>>> 64803ac2372dbb77509d0a03c8db58143a176c7d
 }
 
 .twr-slider {
+  position: absolute;
   width: 100%;
   height: 100vh;
 }
@@ -2613,16 +2626,27 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .twr-slider .twrSwiper .swiper-scrollbar-drag {
   background-color: #459A77 !important;
 }
+<<<<<<< HEAD
 
 .twr-slider .twrSwiper .swiper-scrollbar {
   max-width: 70%;
   width: 100% !important;
   left: 50% !important;
+=======
+.twr-slider .twrSwiper .swiper-pagination {
+  width: 70%;
+  height: 5px;
+  bottom: 30px !important;
+  top: auto;
+  left: 50%;
+>>>>>>> 64803ac2372dbb77509d0a03c8db58143a176c7d
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  bottom: 30px !important;
-  background-color: #D9D9D9 !important;
+  background-color: #D9D9D9;
+}
+.twr-slider .twrSwiper .swiper-pagination .swiper-pagination-progressbar-fill {
+  background-color: #5E7390;
 }
 
 .twr-wrapper .swiper-slide img {
@@ -3282,6 +3306,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 
 .developer__swiper {
   overflow: visible !important;
+  height: 100%;
 }
 
 .developer__wrapper {
@@ -3328,16 +3353,16 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .book-container .book-sticky .sticky-bg {
   position: absolute;
   top: 0;
-  background-color: black;
   width: 100%;
   height: 100%;
   z-index: 3;
+  overflow: hidden;
 }
 
 .book-container .book-sticky .text {

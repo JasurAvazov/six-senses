@@ -121,6 +121,7 @@
 .developer{
     &__swiper{
         overflow: visible !important;
+        height: 100%;
     }
     &__wrapper{
         display: flex;
