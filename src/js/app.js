@@ -450,25 +450,25 @@ gsap.utils.toArray(".book-sticky").forEach((section) => {
     },
   });
   tl.add("start")
-      .to(
-          section.querySelector(".sticky-bg"),
-          {
-            opacity: 0,
-            scale: 2,
-            duration: 0.4,
-          },
-          "start"
-      )
-      .fromTo(
-          section.querySelector(".text"),
-          {
-            y: bookHeight * 5,
-          },
-          {
-            y: -bookHeight + 30,
-          },
-          "start"
-      );
+  .to(
+    section.querySelector(".sticky-bg"),
+    {
+      opacity: 0,
+      scale: 2,
+      duration: 0.4,
+    },
+    "start"
+  )
+  .fromTo(
+    section.querySelector(".text"),
+    {
+      y: bookHeight * 5,
+    },
+    {
+      y: -bookHeight + 30,
+    },
+    "start"
+  );
 });
 
 function format_number(x) {
