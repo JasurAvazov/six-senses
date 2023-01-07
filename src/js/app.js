@@ -400,59 +400,9 @@ menuBtns?.forEach((el) => {
 (function gsapMatchMedia() {
   ScrollTrigger.matchMedia({
     all: function () {
-      // = custom scrollbar ============
-      const scrollBar = document.querySelector(".bar");
-      const handler = document.querySelector("#handler");
-      const barLength = scrollBar.offsetHeight - handler.offsetHeight;
-      const scroller = document.querySelector("#scroll-slide");
-      const maxScroll = ScrollTrigger.maxScroll(scroller);
-      let trigger, draggable;
-
-      trigger = ScrollTrigger.create({
-        scroller: scroller,
-        start: 0,
-        end: "max",
-        onUpdate: updateHandler,
-      });
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".gallery",
-          start: "top top",
-          end: "top top",
-          markers: false,
-          onEnter: () => {
-            console.log("hello");
-            swiper1.mousewheel.enable();
-            body.style.overflowY = "hidden";
-            gallery.style.position = "fixed";
-            gallery.style.top = "0";
-            floor.style.marginTop = "100vh";
-          },
-          onEnterBack: () => {
-            console.log("bye bye");
-            swiper1.mousewheel.enable();
-            body.style.overflowY = "hidden";
-            gallery.style.position = "fixed";
-            gallery.style.top = "0";
-            floor.style.marginTop = "100vh";
-          },
-        },
-      });
-
-      draggable = Draggable.create(handler, {
-        type: "x",
-        bounds: ".bar",
-        onDrag: function () {
-          trigger.scroll((this.y / barLength) * maxScroll);
-        },
-      })[0];
-
-
-      function updateHandler() {
-        gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
-      }
+      
     },
-    // 2500 - 1025
+    // 2500 - 1025 
     "(max-width: 2500px) and (min-width: 1025px)": function () {
       let sections = gsap.utils.toArray(".gallery-slide");
 
@@ -471,15 +421,6 @@ menuBtns?.forEach((el) => {
     // 1024 - 577
     "(max-width: 1024px) and (min-width: 577px)": function () {
         let sections = gsap.utils.toArray(".gallery-slide");
-
-trigger = ScrollTrigger.create({
-  scroller: scroller,
-  start: 0,
-  end: "max",
-  onUpdate: updateHandler,
-});
-
-
         gsap.to(sections, {
           xPercent: -97.8 * (sections.length - 1),
           ease: "power1.out",
@@ -495,8 +436,6 @@ trigger = ScrollTrigger.create({
     // 576 - 320
     "(max-width: 576px) and (min-width: 320px)": function () {
         let sections = gsap.utils.toArray(".gallery-slide");
-
-
         gsap.to(sections, {
           xPercent: -97.8 * (sections.length - 1),
           ease: "power1.out",
@@ -512,31 +451,7 @@ trigger = ScrollTrigger.create({
   });
 })();
 
-function updateHandler() {
-  gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
 
-}
-
-
-
-gsap.utils.toArray(".book-container").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "30% 70%",
-      end: "30% 50%",
-      scrub: 2,
-      markers: false,
-    },
-  });
-  tl.add("start").to(
-    section.querySelector(".text"),
-    {
-      scale: 1.2,
-    },
-    "start"
-  );
-});
 
 function format_number(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -563,3 +478,23 @@ n.forEach(el => {
     },
   });
 })
+
+
+gsap.utils.toArray(".book-container").forEach((section) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "30% 70%",
+      end: "30% 50%",
+      scrub: 2,
+      markers: false,
+    },
+  });
+  tl.add("start").to(
+      section.querySelector(".text"),
+      {
+        scale: 1.2,
+      },
+      "start"
+  );
+});

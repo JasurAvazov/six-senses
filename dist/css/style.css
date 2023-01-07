@@ -1462,7 +1462,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
@@ -1747,6 +1747,7 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .menu-mobile .menu-mobile__content {
   width: 100%;
   min-height: 100vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4348,8 +4349,17 @@ body {
     border-radius: 0;
   }
 
+  .menuOpened .menu__banner {
+    opacity: 1;
+  }
+
   .menu__container {
     display: none;
+  }
+
+  .menu__banner {
+    bottom: 0;
+    opacity: 0;
   }
 
   .menu-mobile {
