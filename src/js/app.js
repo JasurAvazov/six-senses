@@ -420,15 +420,6 @@ menuBtns?.forEach((el) => {
     // 1024 - 577
     "(max-width: 1024px) and (min-width: 577px)": function () {
         let sections = gsap.utils.toArray(".gallery-slide");
-
-trigger = ScrollTrigger.create({
-  scroller: scroller,
-  start: 0,
-  end: "max",
-  onUpdate: updateHandler,
-});
-
-
         gsap.to(sections, {
           xPercent: -97.8 * (sections.length - 1),
           ease: "power1.out",
@@ -444,8 +435,6 @@ trigger = ScrollTrigger.create({
     // 576 - 320
     "(max-width: 576px) and (min-width: 320px)": function () {
         let sections = gsap.utils.toArray(".gallery-slide");
-
-
         gsap.to(sections, {
           xPercent: -97.8 * (sections.length - 1),
           ease: "power1.out",
@@ -460,13 +449,6 @@ trigger = ScrollTrigger.create({
     },
   });
 })();
-
-function updateHandler() {
-  gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
-
-}
-
-
 
 gsap.utils.toArray(".book-container").forEach((section) => {
   const tl = gsap.timeline({
