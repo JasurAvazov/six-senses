@@ -469,17 +469,6 @@ trigger = ScrollTrigger.create({
   });
 })();
 
-function updateHandler() {
-<<<<<<< HEAD
-  gsap.set(handler, {y: (barLength * trigger.scroll()) / maxScroll});
-=======
-  gsap.set(handler, { y: (barLength * trigger.scroll()) / maxScroll });
-
->>>>>>> refs/remotes/origin/main
-}
-
-
-
 gsap.utils.toArray(".book-container").forEach((section) => {
   const tl = gsap.timeline({
     scrollTrigger: {
