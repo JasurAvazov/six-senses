@@ -4,7 +4,9 @@ mixin book()
             img(src="@img/book.png") 
             .toning 
             .sticky-bg
-                img(src="@img/" alt="")
-            .text 
+                picture
+                    source(srcset='@img/subtract-2.png' type='image/png')
+                    img(src='@img/subtract-2.png' alt='' draggable='false')
+            .text
                 p PAY 10%
                 | TO BOOK A UNIT

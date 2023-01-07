@@ -403,8 +403,6 @@ menuBtns?.forEach((el) => {
     // 576 - 320
     "(max-width: 576px) and (min-width: 320px)": function () {
         let sections = gsap.utils.toArray(".gallery-slide");
-
-
         gsap.to(sections, {
           xPercent: -97.8 * (sections.length - 1),
           ease: "power1.out",
@@ -419,57 +417,6 @@ menuBtns?.forEach((el) => {
     },
   });
 })();
-
-gsap.utils.toArray(".book-container").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "30% 70%",
-      end: "30% 50%",
-      scrub: 2,
-      markers: false,
-    },
-  });
-  tl.add("start").to(
-    section.querySelector(".text"),
-    {
-      scale: 1.2,
-    },
-    "start"
-  );
-});
-
-gsap.utils.toArray(".book-sticky").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top top",
-      end: "150% top",
-      scrub: true,
-      markers: false,
-    },
-  });
-  tl.add("start")
-  .to(
-    section.querySelector(".sticky-bg"),
-    {
-      opacity: 0,
-      scale: 2,
-      duration: 0.4,
-    },
-    "start"
-  )
-  .fromTo(
-    section.querySelector(".text"),
-    {
-      y: bookHeight * 5,
-    },
-    {
-      y: -bookHeight + 30,
-    },
-    "start"
-  );
-});
 
 function format_number(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -497,3 +444,54 @@ n.forEach(el => {
     },
   });
 })
+
+gsap.utils.toArray(".book-container").forEach((section) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "30% 70%",
+      end: "30% 50%",
+      scrub: 2,
+      markers: false,
+    },
+  });
+  tl.add("start").to(
+      section.querySelector(".text"),
+      {
+        scale: 1.2,
+      },
+      "start"
+  );
+});
+
+gsap.utils.toArray(".book-sticky").forEach((section) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: "150% top",
+      scrub: true,
+      markers: false,
+    },
+  });
+  tl.add("start")
+      .to(
+          section.querySelector(".sticky-bg"),
+          {
+            opacity: 0,
+            scale: 2,
+            duration: 0.4,
+          },
+          "start"
+      )
+      .fromTo(
+          section.querySelector(".text"),
+          {
+            y: bookHeight * 5,
+          },
+          {
+            y: -bookHeight + 60,
+          },
+          "start"
+      );
+});

@@ -350,9 +350,12 @@
     align-items: center;
 }
 
-.menu__logo p span{
-     color: #459A77;
- }
+.menu__logo p{
+    color: white;
+    span{
+        color: #459A77;
+    }
+}
 
 .menu__logo img{
     width: 220px;
