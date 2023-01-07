@@ -731,15 +731,9 @@
     gap: 20px;
     img{
         width: 100%;
+        max-width: 100%;
         height: 100%;
-        @include media(1200){
-            max-width: 800px;
-        }
-        @include media(992){
-            max-width: 600px;
-        }
         @include media(768){
-            max-width: 320px;
             width: 100%;
         }
     }

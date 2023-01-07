@@ -1826,21 +1826,11 @@
 }
 .twr-title img {
   width: 100%;
+  max-width: 100%;
   height: 100%;
-}
-@media (max-width: 1200px) {
-  .twr-title img {
-    max-width: 800px;
-  }
-}
-@media (max-width: 992px) {
-  .twr-title img {
-    max-width: 600px;
-  }
 }
 @media (max-width: 768px) {
   .twr-title img {
-    max-width: 320px;
     width: 100%;
   }
 }
@@ -2910,6 +2900,7 @@
 
 .developer__swiper {
   overflow: visible !important;
+  height: 100%;
 }
 .developer__wrapper {
   display: -webkit-box;
