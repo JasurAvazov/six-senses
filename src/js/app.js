@@ -258,6 +258,7 @@ new Swiper(".floor__swiper", {
 
 let scrollBefore = 0;
 const header = document.getElementById("header");
+
 window.addEventListener("scroll", (e) => {
   const scrolled = window.scrollY;
   if (scrolled > 300) {
