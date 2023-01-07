@@ -15,11 +15,13 @@
     flex-wrap: nowrap;
     overflow-x: hidden;
     @media (max-width: 576px) {
-        height: auto;
+        height: 50vh;
+        overflow-y: hidden;
       }
   }
   .gallery-slide {
     flex-shrink: 0;
+    cursor: pointer;
   }
   .gallery-slide {
     width: 100%;
@@ -44,13 +46,13 @@
       img {
         height: 100%;
         max-height: 1080px;
-        // width: 100%;
+        width: 100%;
         @media (max-width: 1024px) {
           max-height: 100%;
         }
         @media (max-width: 576px) {
           max-height: 320px;
-          object-fit: cover;
+          object-fit: contain;
         }
       }
     }
@@ -125,41 +127,6 @@
         color: #777777;
         line-height: 26px;
       }
-    }
-  }
-  .bar {
-    position: absolute;
-    bottom: 60px;
-    left: 60px;
-    width: 260px;
-    height: 3px;
-    background-color: #8c8c8c;
-    display: flex;
-    align-items: center;
-  }
-  #handler {
-    position: relative;
-    width: 16px;
-    height: 16px;
-    margin-left: -6px;
-    border-radius: 50%;
-    background-color: #828282;
-  }
-  .swiper-scrollbar {
-    position: relative;
-    width: 270px;
-    left: 120px;
-    bottom: 120px;
-    background-color: rgba(217, 217, 217, 0.6);
-    display: flex;
-    align-items: center;
-    .swiper-scrollbar-drag {
-      max-width: 33.3px;
-      min-width: 33.3px;
-      height: 33.3px;
-      border-radius: 16px;
-      background-color: #ffffff;
-      cursor: pointer;
     }
   }
 }
