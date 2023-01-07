@@ -474,9 +474,10 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  pointer-events: none;
 }
 
 .menu__contactUs {
@@ -763,7 +764,6 @@
 .menu-mobile .menu-mobile__content {
   width: 100%;
   min-height: 100vh;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

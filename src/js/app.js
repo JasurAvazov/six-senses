@@ -280,6 +280,7 @@ let menuOpened = false;
 const menu_btn = document.querySelector(".menu-nav__menu");
 const menu_btn_back = document.querySelectorAll(".menu-close");
 const menu = document.getElementById("menu");
+const menuLinks = document.querySelectorAll(".menu-con__btn");
 
 menu_btn.addEventListener("click", () => {
   menu.classList.add("menuOpened");
@@ -293,6 +294,14 @@ menu_btn_back.forEach((el) => {
     body.style.overflowY = "scroll";
   });
 });
+
+menuLinks.forEach(el => {
+  el.addEventListener('click', () => {
+    menu.classList.remove("menuOpened");
+    body.style.overflowY = "scroll";
+  })
+})
+
 
 const numberClass = document.querySelectorAll(".show-number");
 numberClass?.forEach((el) => {
