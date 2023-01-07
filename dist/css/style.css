@@ -381,6 +381,11 @@
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
+@media (max-width: 992px) {
+  .menuOpened .menu__banner {
+    opacity: 1;
+  }
+}
 
 .menu__container {
   max-width: 1440px;
@@ -474,10 +479,16 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
+}
+@media (max-width: 992px) {
+  .menu__banner {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 .menu__contactUs {
@@ -764,6 +775,7 @@
 .menu-mobile .menu-mobile__content {
   width: 100%;
   min-height: 100vh;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
