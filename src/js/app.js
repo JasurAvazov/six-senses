@@ -439,8 +439,6 @@ gsap.utils.toArray(".book-sticky").forEach((section) => {
   });
 })();
 
-
-
 function format_number(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
