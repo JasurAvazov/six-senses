@@ -3443,6 +3443,9 @@ body:not(.is-using-mouse) .fancybox__container :focus {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   gap: 64px 128px;
 }
 

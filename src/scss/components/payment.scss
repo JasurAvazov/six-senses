@@ -83,6 +83,9 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
     gap: 64px 128px;
     @media (max-width: 768px){
         gap: 54px 54px;

@@ -349,39 +349,7 @@ gsap.utils.toArray(".twr-sticky").forEach((section) => {
   );
 });
 
-const bookHeight = document.querySelector(".twr-title").clientHeight / 2;
 
-gsap.utils.toArray(".book-sticky").forEach((section) => {
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: section,
-      start: "top top",
-      end: "150% top",
-      scrub: true,
-      markers: false,
-    },
-  });
-  tl.add("start")
-    .to(
-      section.querySelector(".sticky-bg"),
-      {
-        opacity: 0,
-        scale: 2,
-        duration: 0.4,
-      },
-      "start"
-    )
-    .fromTo(
-      section.querySelector(".text"),
-      {
-        y: bookHeight * 5,
-      },
-      {
-        y: -bookHeight + 30,
-      },
-      "start"
-    );
-});
 
 // ============= gallery
 
@@ -465,6 +433,7 @@ n.forEach(el => {
   });
 })
 
+// Book don't edit
 
 gsap.utils.toArray(".book-container").forEach((section) => {
   const tl = gsap.timeline({
@@ -483,4 +452,38 @@ gsap.utils.toArray(".book-container").forEach((section) => {
       },
       "start"
   );
+});
+
+const bookHeight = document.querySelector(".twr-title").clientHeight / 2;
+
+gsap.utils.toArray(".book-sticky").forEach((section) => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: "150% top",
+      scrub: true,
+      markers: false,
+    },
+  });
+  tl.add("start")
+    .to(
+      section.querySelector(".sticky-bg"),
+      {
+        opacity: 0,
+        scale: 2,
+        duration: 0.4,
+      },
+      "start"
+    )
+    .fromTo(
+      section.querySelector(".text"),
+      {
+        y: bookHeight * 5,
+      },
+      {
+        y: -bookHeight + 30,
+      },
+      "start"
+    );
 });
